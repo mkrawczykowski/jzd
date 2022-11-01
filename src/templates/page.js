@@ -11,10 +11,13 @@ export const query = graphql`
   }
 `
 
-const PageTemplate = ( { data }) =>{ 
+const PageTemplate = ( { data } ) =>{ 
+  const page = data.wpgraphql.page;
+
   return(
     <>
-      { data.title }
+      { page.title }
+      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
     </>
   )
 
