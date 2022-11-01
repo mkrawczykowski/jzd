@@ -1,11 +1,13 @@
 exports.createPages = async ({ actions, graphql }) =>{
   const result = await graphql(`
-    wpgraphql {
-      pages {
-        nodes {
-          id
+    {
+      wpgraphql {
+        pages {
+          nodes {
+            id
+          }
         }
-      }
+      }    
     }
   `)
 
