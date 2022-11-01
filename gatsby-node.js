@@ -5,20 +5,21 @@ exports.createPages = async ({ actions, graphql }) =>{
         pages {
           nodes {
             id
+            uri
           }
         }
       }    
     }
   `)
 
-  const pages = wpgraphql.pages.nodes;
+  const pages = result.data.wpgraphql.pages.nodes;
 
   pages.forEach(page => {
     actions.createPage({
       path: page.uri,
       component: require.resolve('./src/templates/page.js'),
       context: {
-        id: page.id
+        id: page.id,
       }
     })
   })
