@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import * as styles from './Footer.module.scss';
 
 const Footer = () => {
     const data = useStaticQuery(graphql`
@@ -18,9 +19,9 @@ const Footer = () => {
     const footerData = data.wpgraphql.acfOptions.footer;
 
     return (
-        <footer>
+        <footer className={ styles.footer }>
             <ul>
-                <li><a href="#">Polityka prywatności</a></li>
+                <li><a href="http://gatsbyjs.com">Polityka prywatności</a></li>
                 <li>
                     { footerData.designAuthorInfo }
                     <a href={ footerData.designAuthorUrl }>
