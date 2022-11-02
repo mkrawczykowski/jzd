@@ -15,6 +15,7 @@
         url: 'https://blogdeva.stronyireszta.pl/graphql'
 
       }
-    }
+    },
+    `gatsby-plugin-sass`
   ],
 }
