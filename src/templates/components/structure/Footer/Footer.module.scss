@@ -1,4 +1,6 @@
+@import '../../../../styles/global.scss';
+
 .footer{
-    background: red;
+    background: $darkgray;
     padding: 40px;
 }
