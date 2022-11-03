@@ -11,10 +11,11 @@ const Footer = () => {
                         designAuthorInfo
                         designAuthorName
                         designAuthorUrl
-                        // trying to use URL field
-                        // https://github.com/wp-graphql/wp-graphql-acf
-                        privacyPolicyLink{
-                            link
+                        privacyPolicyLink {
+                            ... on WPGraphQL_Page {
+                              id
+                              uri
+                            }
                         }
                     }
                 }
@@ -26,7 +27,7 @@ const Footer = () => {
     return (
         <footer className={ styles.footer }>
             <ul>
-                <li><a href={ footerData.privacyPolicyLink }>Polityka prywatności</a></li>
+                <li><a href={ footerData.privacyPolicyLink.uri }>Polityka prywatności</a></li>
                 <li>
                     { footerData.designAuthorInfo }
                     <a href={ footerData.designAuthorUrl }>
