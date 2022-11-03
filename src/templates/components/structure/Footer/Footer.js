@@ -11,6 +11,11 @@ const Footer = () => {
                         designAuthorInfo
                         designAuthorName
                         designAuthorUrl
+                        // trying to use URL field
+                        // https://github.com/wp-graphql/wp-graphql-acf
+                        privacyPolicyLink{
+                            link
+                        }
                     }
                 }
             }
@@ -21,7 +26,7 @@ const Footer = () => {
     return (
         <footer className={ styles.footer }>
             <ul>
-                <li><a href="http://gatsbyjs.com">Polityka prywatności</a></li>
+                <li><a href={ footerData.privacyPolicyLink }>Polityka prywatności</a></li>
                 <li>
                     { footerData.designAuthorInfo }
                     <a href={ footerData.designAuthorUrl }>
