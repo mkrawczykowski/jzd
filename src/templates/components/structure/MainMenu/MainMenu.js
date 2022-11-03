@@ -21,7 +21,18 @@ const Mainmenu = () =>{
 
   return(
     <>
-      { JSON.stringify(mainMenuQuery, null, 2) }
+      <ul>
+        { mainMenuQuery.wpgraphql.menu.menuItems.nodes.map( link => {
+          return(
+            <li>{ link.label }</li>
+          )
+        })
+        }
+      </ul>
+      
+      {/* { JSON.stringify(mainMenuQuery, null, 2) } */}
     </>
   )
 }
+
+export default Mainmenu;
