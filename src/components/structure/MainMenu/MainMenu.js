@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import * as styles from './MainMenu.module.scss';
 
 const Mainmenu = () =>{
   const mainMenuQuery = useStaticQuery(graphql`
@@ -21,15 +22,16 @@ const Mainmenu = () =>{
 
   return(
     <>
-      <ul>
-        { mainMenuQuery.wpgraphql.menu.menuItems.nodes.map( link => {
-          return(
-            <li>{ link.label }</li>
-          )
-        })
-        }
-      </ul>
-      
+      <nav className={ styles.mainMenu }>
+        <ul>
+          { mainMenuQuery.wpgraphql.menu.menuItems.nodes.map( link => {
+            return(
+              <li>{ link.label }</li>
+            )
+          })
+          }
+        </ul>
+      </nav>
       {/* { JSON.stringify(mainMenuQuery, null, 2) } */}
     </>
   )
