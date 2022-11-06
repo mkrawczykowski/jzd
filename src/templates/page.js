@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from './components/structure/Layout/Layout';
+import Layout from '../components/structure/Layout/Layout';
 
 export const query = graphql`
   query($id: ID!){

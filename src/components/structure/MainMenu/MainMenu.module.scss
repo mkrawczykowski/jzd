@@ -1,5 +1,5 @@
-// @import '../../../../styles/global.scss';
+@use '../../../styles/global' as *;
 
 .main-menu{
-  background-color: $darkgray;
+  background-color: global.$darkgray;
 }

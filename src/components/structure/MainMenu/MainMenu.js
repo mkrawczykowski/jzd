@@ -6,7 +6,7 @@ const Mainmenu = () =>{
   const mainMenuQuery = useStaticQuery(graphql`
     query{
       wpgraphql {
-        menu(id: "\"dGVybTozNw==\"") {
+        menu(id: "dGVybTozNw==") {
           menuItems {
             nodes {
               label
