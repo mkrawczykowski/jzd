@@ -1,5 +1,5 @@
 @use './variables';
 
 .container{
-  background-color: $darkgray;
+  background-color: variables.$darkgray;
 }
