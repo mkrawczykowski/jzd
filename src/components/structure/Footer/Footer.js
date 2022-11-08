@@ -17,6 +17,12 @@ const Footer = () => {
                               uri
                             }
                         }
+                    },
+                    general{
+                        logo {
+                            altText
+                            sourceUrl
+                        }
                     }
                 }
             }
