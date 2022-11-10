@@ -32,19 +32,15 @@ const Footer = () => {
 
     return (
         <footer className={ styles.footer }>
-            <div className={ styles.container }>
-                test
-                <ul>
-                    <li><a href={ footerData.privacyPolicyLink.uri }>Polityka prywatności</a></li>
-                    <li>
-                        { footerData.designAuthorInfo }
-                        <a href={ footerData.designAuthorUrl }>
-                            { footerData.designAuthorName }
-                        </a>
-                    </li>
-                </ul>
-                test2
-            </div>
+            <ul>
+                <li><a href={ footerData.privacyPolicyLink.uri }>Polityka prywatności</a></li>
+                <li>
+                    { footerData.designAuthorInfo }
+                    <a href={ footerData.designAuthorUrl }>
+                        { footerData.designAuthorName }
+                    </a>
+                </li>
+            </ul>
         </footer>
     )
 }
