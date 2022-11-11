@@ -32,9 +32,9 @@ const Footer = () => {
 
     return (
         <footer className={ styles.footer }>
-            <ul>
-                <li><a href={ footerData.privacyPolicyLink.uri }>Polityka prywatności</a></li>
-                <li>
+            <ul className={ styles.footer__list}>
+                <li className={ styles.footer__listItem }><a href={ footerData.privacyPolicyLink.uri }>Polityka prywatności</a></li>
+                <li className={ styles.footer__listItem  }>
                     { footerData.designAuthorInfo }
                     <a href={ footerData.designAuthorUrl }>
                         { footerData.designAuthorName }

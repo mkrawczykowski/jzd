@@ -6,19 +6,44 @@
     display: flex;
     align-items: center;
 
-    ul{
+    &__list{
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
 
-        li{
+        &Item{
             font-family: 'Raleway', sans-serif;
             font-style: normal;
             font-weight: 500;
-            font-size: 12px;
+            font-size: 1.2rem;
             line-height: 130%;
             color: global.$white;
+            position: relative;
+
+            &:not(:first-child){
+                margin-left: 2.3rem;
+
+                &:before{
+                    content: '';
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    display: inline-block;
+                    background-color: global.$purple;
+                    border-radius: 50%;
+                    position: relative;
+                    right: 1.1rem;
+                }    
+            }
+
+            a{
+                font-family: 'Raleway', sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1.2rem;
+                line-height: 130%;
+                color: global.$white;
+            }
         }
     }
 }
