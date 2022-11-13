@@ -31,8 +31,10 @@ const PageTemplate = ( { data } ) =>{
       {/* <FlexibleSections {...flexibleSections} /> */}
 
       { flexSections.map(flexibleSection => {
+        const {__typename, ...sectionData} = flexibleSection;
         return(
-          <pre>{ JSON.stringify(flexibleection, null, 2) }</pre>
+          // <pre>{ JSON.stringify(rest, null, 2) }</pre>
+          <FlexibleSections typename={__typename} sectionData={{...sectionData}} />
         )
         // const getSectionData = (__typename, ...sectionData) =>{
         //   return(
@@ -44,13 +46,6 @@ const PageTemplate = ( { data } ) =>{
         //   )
         // }
         // const section = getSectionData(flexibleSection);
-        return(
-          <>
-            <pre>{ JSON.stringify(section, null, 2) }</pre>
-            {/* <FlexibleSections { ...section } /> */}
-            {/* <FlexibleSections test="testowanie" /> */}
-          </>  
-        )
       }) }
     </Layout>
   )
