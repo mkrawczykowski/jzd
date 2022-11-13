@@ -1,11 +1,11 @@
 import React from 'react'
 
-const FlexibleSections = (props) => {
+const FlexibleSections = ({typename, sectionData}) => {
 
 
  return(
    <>
-    <pre>{ JSON.stringify(props, null, 2) }</pre>
+    <pre>{ JSON.stringify(typename, null, 2) }</pre>
     {/* { 
     props.data.map(item => {
       return(
