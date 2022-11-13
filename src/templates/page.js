@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/structure/Layout/Layout';
-// import NewestPosts from '../components/content/NewestPosts/NewestPosts'
+import FlexibleSections from '../components/content/FlexibleSections/FlexibleSections'
 
 export const query = graphql`  
   query($id: ID!){
@@ -22,22 +22,36 @@ export const query = graphql`
 
 const PageTemplate = ( { data } ) =>{ 
   const page = data.wpgraphql.page;
-
+  const flexSections = page.ACFcontentSections.sections;
+  
   return(
     <Layout>
       { page.title }
-      {/* { page.ACFcontentSections } */}
-      <pre>{JSON.stringify(page.ACFcontentSections.sections, null, 2)}</pre>
-      {
-        page.ACFcontentSections.sections.map(section => {
-          return(
-            <>
-                { JSON.stringify(section.__typename, null, 2) }
-                <br></br>  <br></br>      
-            </>
-          )
-        })
-      }
+      {/* <pre>{ JSON.stringify(flexibleSections, null, 2) }</pre> */}
+      {/* <FlexibleSections {...flexibleSections} /> */}
+
+      { flexSections.map(flexibleSection => {
+        return(
+          <pre>{ JSON.stringify(flexibleection, null, 2) }</pre>
+        )
+        // const getSectionData = (__typename, ...sectionData) =>{
+        //   return(
+        //     {
+        //       name: __typename
+        //       // __typename,
+        //       // data: sectionData
+        //     }
+        //   )
+        // }
+        // const section = getSectionData(flexibleSection);
+        return(
+          <>
+            <pre>{ JSON.stringify(section, null, 2) }</pre>
+            {/* <FlexibleSections { ...section } /> */}
+            {/* <FlexibleSections test="testowanie" /> */}
+          </>  
+        )
+      }) }
     </Layout>
   )
 
