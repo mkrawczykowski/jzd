@@ -1,7 +1,18 @@
 import React from 'react'
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 const NewestPosts = ({ data }) => {
+  const posts = useStaticQuery(graphql`
+    query GetNewestPosts{
+      wpgraphql {
+        posts(first: ${data.newestPostsNumber}, offset: ${data.offset}) {
+          nodes {
+            title
+          }
+        }
+      }
+    }
+  `)
   return(
     <>
     <section>
