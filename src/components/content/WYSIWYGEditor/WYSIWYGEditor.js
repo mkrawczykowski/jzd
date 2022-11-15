@@ -6,8 +6,6 @@ const WYSIWYGEditor = ({ data }) => {
     <>
     <section>
       <p dangerouslySetInnerHTML={{__html: data.wysiwygEditor}}></p>
-
-      
     </section>
     </>
   )
