@@ -1,7 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/structure/Layout/Layout';
-import FlexibleSections from '../components/content/FlexibleSections/FlexibleSections'
+import FlexibleSections from '../components/content/FlexibleSections/FlexibleSections';
+import HPSlider from '../components/structure/HPSlider/HPSlider';
 
 export const query = graphql`  
   query($id: ID!){
@@ -26,6 +27,7 @@ const PageTemplate = ( { data } ) =>{
   
   return(
     <Layout>
+      <HPSlider></HPSlider>
       { page.title }
       {/* <pre>{ JSON.stringify(flexibleSections, null, 2) }</pre> */}
       {/* <FlexibleSections {...flexibleSections} /> */}
