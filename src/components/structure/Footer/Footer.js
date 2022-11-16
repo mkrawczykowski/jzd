@@ -7,7 +7,7 @@ const Footer = () => {
         query{
             wpgraphql {
                 acfOptions {
-                    footer {
+                    general {
                         designAuthorInfo
                         designAuthorName
                         designAuthorUrl
@@ -17,8 +17,6 @@ const Footer = () => {
                               uri
                             }
                         }
-                    },
-                    general{
                         logo {
                             altText
                             sourceUrl
@@ -28,11 +26,11 @@ const Footer = () => {
             }
         }
     `)
-    const footerData = data.wpgraphql.acfOptions.footer;
+    const footerData = data.wpgraphql.acfOptions.general;
 
     return (
         <footer className={ styles.footer }>
-            <ul className={ styles.footer__list}>
+            <ul className={ styles.footer__list }>
                 <li className={ styles.footer__listItem }><a href={ footerData.privacyPolicyLink.uri }>Polityka prywatności</a></li>
                 <li className={ styles.footer__listItem  }>
                     { footerData.designAuthorInfo }
