@@ -1,6 +1,9 @@
 import React from 'react';
 import Container from '../Container/Container';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import './HPSlider.module.scss';
+
+import 'swiper/css';
 
 const HPSlider = () => {
   return(
