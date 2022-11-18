@@ -27,10 +27,9 @@ const PageTemplate = ( { data, location } ) =>{
   
   return(
     <Layout>
-{
-
-  location.pathname === '/' ? <HPSlider></HPSlider> : ''
-}
+      {
+        location.pathname === '/' ? <HPSlider></HPSlider> : ''
+      }
       
       
       { page.title }
