@@ -17,18 +17,40 @@ export const query = graphql`
           }
         }
       }
+      acfOptions {
+        general {
+          slides {
+            slide {
+              ... on WPGraphQL_Post {
+                id
+                uri
+                title
+                date
+                categories {
+                  nodes {
+                    uri
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
 
-const PageTemplate = ( { data, location } ) =>{
+const PageTemplate = ( { data, location } ) => {
   const page = data.wpgraphql.page;
+  const acfOptions = data.wpgraphql.acfOptions.general;
   const flexSections = page.ACFcontentSections.sections;
   
   return(
     <Layout>
+      {/* <pre>{ JSON.stringify(acfOptions,null,2) }</pre> */}
       {
-        location.pathname === '/' ? <HPSlider></HPSlider> : ''
+        location.pathname === '/' ? <HPSlider acfOptions={ acfOptions }></HPSlider> : ''
       }
       
       { 
