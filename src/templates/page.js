@@ -21,15 +21,20 @@ export const query = graphql`
   }
 `
 
-const PageTemplate = ( { data } ) =>{
+const PageTemplate = ( { data, location } ) =>{
   const page = data.wpgraphql.page;
   const flexSections = page.ACFcontentSections.sections;
   
   return(
     <Layout>
+{
+
+  location.pathname === '/' ? <HPSlider></HPSlider> : ''
+}
+      
       
       { page.title }
-      <pre>{ JSON.stringify(pageContext, null, 2) }</pre>
+      <pre>{ JSON.stringify(data, null, 2) }</pre>
       {/* <FlexibleSections {...flexibleSections} /> */}
 
       { flexSections.map(flexibleSection => {
