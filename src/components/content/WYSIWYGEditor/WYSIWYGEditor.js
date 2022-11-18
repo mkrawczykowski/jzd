@@ -1,13 +1,14 @@
 import React from 'react'
 import { graphql } from "gatsby"
+import Container from '../../structure/Container/Container'
 
 const WYSIWYGEditor = ({ data }) => {
   return(
-    <>
-    <section>
-      <p dangerouslySetInnerHTML={{__html: data.wysiwygEditor}}></p>
-    </section>
-    </>
+    <Container>
+      <section>
+        <p dangerouslySetInnerHTML={{__html: data.wysiwygEditor}}></p>
+      </section>
+    </Container>
   )
 }
 

@@ -1,13 +1,14 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
+import Container from '../../structure/Container/Container'
 
 const NewestPosts = ({ data }) => {
   return(
-    <>
-    <section>
-      { data.newestPostsNumber }
-    </section>
-    </>
+    <Container>
+      <section>
+        { data.newestPostsNumber }
+      </section>
+    </Container>
   )
 }
 
