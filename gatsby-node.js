@@ -19,7 +19,7 @@ exports.createPages = async ({ actions, graphql }) =>{
         }
       }
     }
-  `)
+  `);
 
   const pages = result.data.wpgraphql.pages.nodes;
   const posts = result.data.wpgraphql.posts.nodes;
@@ -32,7 +32,7 @@ exports.createPages = async ({ actions, graphql }) =>{
         id: page.id,
       }
     })
-  })
+  });
   posts.forEach(post => {
     actions.createPage({
       path: post.uri,
@@ -41,5 +41,5 @@ exports.createPages = async ({ actions, graphql }) =>{
         id: post.id
       }
     })
-  })
-}
+  });
+};

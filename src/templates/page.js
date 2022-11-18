@@ -19,7 +19,7 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
 const PageTemplate = ( { data, location } ) =>{
   const page = data.wpgraphql.page;
@@ -31,31 +31,16 @@ const PageTemplate = ( { data, location } ) =>{
         location.pathname === '/' ? <HPSlider></HPSlider> : ''
       }
       
-      
-      { page.title }
-      <pre>{ JSON.stringify(data, null, 2) }</pre>
-      {/* <FlexibleSections {...flexibleSections} /> */}
-
-      { flexSections.map(flexibleSection => {
-        const {__typename, ...sectionData} = flexibleSection;
-        return(
-          // <pre>{ JSON.stringify(rest, null, 2) }</pre>
-          <FlexibleSections typename={__typename} sectionData={{...sectionData}} />
-        )
-        // const getSectionData = (__typename, ...sectionData) =>{
-        //   return(
-        //     {
-        //       name: __typename
-        //       // __typename,
-        //       // data: sectionData
-        //     }
-        //   )
-        // }
-        // const section = getSectionData(flexibleSection);
-      }) }
+      { 
+        flexSections.map(flexibleSection => {
+          const {__typename, ...sectionData} = flexibleSection;
+          return(
+            <FlexibleSections typename={__typename} sectionData={{...sectionData}} />
+          )
+        }) 
+      }
     </Layout>
   )
-
-}
+};
 
 export default PageTemplate;

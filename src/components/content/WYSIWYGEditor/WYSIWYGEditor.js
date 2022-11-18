@@ -1,6 +1,6 @@
-import React from 'react'
-import { graphql } from "gatsby"
-import Container from '../../structure/Container/Container'
+import React from 'react';
+import { graphql } from "gatsby";
+import Container from '../../structure/Container/Container';
 
 const WYSIWYGEditor = ({ data }) => {
   return(
@@ -12,10 +12,10 @@ const WYSIWYGEditor = ({ data }) => {
   )
 }
 
-export default WYSIWYGEditor
+export default WYSIWYGEditor;
 
 export const query = graphql`
   fragment WysiwygeditorFragment on WPGraphQL_Page_Acfcontentsections_Sections_Wysiwygeditor{
     wysiwygEditor
   }
-`
+`;
