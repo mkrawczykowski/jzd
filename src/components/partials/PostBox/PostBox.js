@@ -1,4 +1,5 @@
 import React from 'react';
+import RoundedButton from '../RoundedButton/RoundedButton';
 
 const PostBox = ({ id, title, excerpt, uri, date, categories }) => {
   return(
@@ -13,7 +14,7 @@ const PostBox = ({ id, title, excerpt, uri, date, categories }) => {
           })
         }
       </ul>
-      <a href={ uri }>Czytaj dalej</a>
+      <RoundedButton href={ uri }></RoundedButton>
       <p>{ date }</p>
       <p>{ excerpt }</p>
     </div>
