@@ -20,7 +20,7 @@ const HPSlider = ({ acfOptions }) => {
             const slideCategories = HPSlide.slide.categories.nodes;
             return(
               <SwiperSlide>
-                { JSON.stringify(HPSlide.slide.categories.nodes,null,2) }
+                {/* { JSON.stringify(HPSlide.slide.categories.nodes,null,2) } */}
                 {/* <pre>{ JSON.stringify(slide.categories.nodes,null,2) }</pre> */}
                 <h2>{ HPSlide.slide.title }</h2>
                 <p>{ HPSlide.slide.date }</p>
