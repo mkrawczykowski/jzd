@@ -15,7 +15,18 @@ const NewestPosts = ({ data }) => {
     wpgraphql {
       posts {
         nodes {
+          uri
           title
+          ACFpostExcerpt {
+            postExcerpt
+          }
+          date
+          categories {
+            nodes {
+              name
+              uri
+            }
+          }
         }
       }
     }
@@ -27,17 +38,30 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
   return(
     <Container>
       <section>
-        {/* { data.newestPostsNumber }
-        { data.skip }
-        { data.layout } */}
-        { typeof skip }<br></br>
-        { newestPostsNumber + skip }<br></br>
-        sssssss<br></br>
-        <br></br>
         {
-        allPosts.map((post, index) => {
-          return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? <h2>{ `${index}: ${post.title}` }</h2> : ''
-        }) 
+          allPosts.map((post, index) => {
+            const displayPost = ( ) => {
+              const postCategories = post.categories.nodes;
+              return(
+                  <div>
+                    <h2>{ post.title }</h2>
+                    <ul>
+                      { 
+                        postCategories.map(postCategory => {
+                          return(
+                            <li><a href={ postCategory.uri }>{ postCategory.name }</a></li>
+                          )
+                        })
+                      }
+                    </ul>
+                    <p>{ post.date }</p>
+                    <p>{ post.ACFpostExcerpt.postExcerpt }</p>
+                  </div>
+                )
+            }
+            return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? displayPost() : ''
+
+          }) 
         }
       </section>
     </Container>
