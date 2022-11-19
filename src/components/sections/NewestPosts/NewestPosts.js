@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from "gatsby";
 import Container from '../../structure/Container/Container';
+import PostBox from '../../partials/PostBox/PostBox';
 
 
 
@@ -15,6 +16,7 @@ const NewestPosts = ({ data }) => {
     wpgraphql {
       posts {
         nodes {
+          id
           uri
           title
           ACFpostExcerpt {
@@ -36,35 +38,22 @@ const NewestPosts = ({ data }) => {
 const allPosts = postsQuery.wpgraphql.posts.nodes;
 
   return(
-    <Container>
-      <section>
+    <section>
+      <Container>
         {
           allPosts.map((post, index) => {
-            const displayPost = ( ) => {
-              const postCategories = post.categories.nodes;
-              return(
-                  <div>
-                    <h2>{ post.title }</h2>
-                    <ul>
-                      { 
-                        postCategories.map(postCategory => {
-                          return(
-                            <li><a href={ postCategory.uri }>{ postCategory.name }</a></li>
-                          )
-                        })
-                      }
-                    </ul>
-                    <p>{ post.date }</p>
-                    <p>{ post.ACFpostExcerpt.postExcerpt }</p>
-                  </div>
-                )
-            }
-            return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? displayPost() : ''
-
+            const id = post.id;
+            const title = post.title;
+            const excerpt = post.excerpt;
+            const uri = post.uri;
+            const date = post.date;
+            const categories = post.categories.nodes;
+            // return categories;
+            return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox> : ''
           }) 
         }
-      </section>
-    </Container>
+      </Container>
+    </section>
   )
 };
 
