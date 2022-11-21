@@ -1,13 +1,5 @@
 $gap: 2rem;
 
-$base-color: #036;
-
-@for $i from 1 through 3 {
-  ul:nth-child(3n + #{$i}) {
-    background-color: lighten($base-color, $i * 5%);
-  }
-}
-
 @for $i from 1 through 12{
   .col-#{$i} {
     flex-basis: calc((1/12)*#{$i});
