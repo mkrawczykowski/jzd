@@ -2,12 +2,13 @@ $gap: 2rem;
 
 @for $i from 1 through 12{
   .col-#{$i} {
-    flex-basis: calc((1/12)*#{$i});
+    flex-basis: calc((100%/12)*#{$i});
   }
 }
 
 .row{
   display: flex;
+  flex: 1 0;
 
   & > div:not(:first-of-type):not(:last-of-type) {
     padding-left: calc($gap / 2);
@@ -22,6 +23,10 @@ $gap: 2rem;
   & > div:last-of-type{
     padding-left: calc($gap / 2);
     padding-right: 0;
+  }
+
+  .cell-test{
+    background: rgb(123, 123, 123);
   }
 }
 

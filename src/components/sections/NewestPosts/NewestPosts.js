@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from "gatsby";
 import Container from '../../structure/Container/Container';
 import PostBox from '../../partials/PostBox/PostBox';
-
+import * as styles from '../../../styles/global/index.scss'
 
 
 const NewestPosts = ({ data }) => {
@@ -40,9 +40,9 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
   return(
     <section>
       <Container>
-        <div class="row">
-          <div class="col-1"></div>
-          <div class="col-10">
+        <div className="row">
+          <div className="col-1"><div className="cell-test">aaaaaa</div></div>
+          <div className="col-10"><div className="cell-test">
             {
               allPosts.map((post, index) => {
                 const id = post.id;
@@ -55,8 +55,9 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
                 return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox> : ''
               }) 
             }
+            </div>
           </div>
-          <div class="col-1"></div>
+          <div class="col-1"><div className="cell-test">aaaaaa</div></div>
         </div>
       </Container>
     </section>
