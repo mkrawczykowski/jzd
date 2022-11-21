@@ -67,7 +67,7 @@ export default NewestPosts
 
 export const query = graphql`
   fragment NewestpostsFragment on WPGraphQL_Page_Acfcontentsections_Sections_Newestposts{
-    sectionsHeading
+    sectionsheading
     newestPostsNumber
     skip
     layout
