@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Container from '../../structure/Container/Container';
 import PostBox from '../../partials/PostBox/PostBox';
 import * as styles from './NewestPosts.module.scss';
+import * as grid from '../../../styles/global/_grid.scss';
 
 
 const NewestPosts = ({ data }) => {
@@ -39,11 +40,11 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
 
   return(
     <section>
-      <div className={styles.container}>
-        <div className={styles.row}>
-          <div className={styles.col1}><div className={styles.test}>aaaaaa</div></div>
-          <div className={styles.col6}>
-            <div className={styles.test}>
+      <div className={grid.container}>
+        <div className={grid.row}>
+          <div className={grid['col-3xl-1']}><div className={grid.test}>aaaaaa</div></div>
+          <div className={styles['col-3xl-6']}>
+            <div className={grid.test}>
               {
                 allPosts.map((post, index) => {
                   const id = post.id;
@@ -58,8 +59,8 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
               }
             </div>
           </div>
-          <div className={styles.col4}><div className={styles.test}>aaaaaa</div></div>
-          <div className={styles.col1}><div className={styles.test}>aaaaaa</div></div>
+          <div className={grid['col-3xl-4']}><div className={grid.test}>aaaaaa</div></div>
+          <div className={grid['col-3xl-1']}><div className={grid.test}>aaaaaa</div></div>
         </div>
       </div>
     </section>

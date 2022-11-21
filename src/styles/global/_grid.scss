@@ -1,23 +1,29 @@
-$container-width: 136rem;
-$gap: 2rem;
+@use './variables';
 
-@for $i from 1 through 12{
-  .col#{$i} {
-    flex-basis: calc((100%/12) * #{$i});
+@each $breakpointName, $breakpointValue in variables.$breakpoints {
+  $indexBreakpoint: index((variables.$breakpoints), ($breakpointName, $breakpointValue));
+
+  @media screen and (min-width:#{$breakpointValue}){
+    @for $i from 1 through 12{
+      .col-#{$breakpointName}-#{$i} {
+        flex-basis: calc((100%/12) * #{$i});
+      }
+    }
   }
 }
+
 .container{
-  max-width: $container-width;
+  max-width: variables.$container-width;
   margin: 0 auto;
 
   .row{
     display: flex;
-    margin-left: calc($gap / 2 * -1);
-    margin-right: calc($gap / 2 * -1);
+    margin-left: calc(variables.$gap / 2 * -1);
+    margin-right: calc(variables.$gap / 2 * -1);
 
     & > div {
-      padding-left: calc($gap / 2);
-      padding-right: calc($gap / 2);
+      padding-left: calc(variables.$gap / 2);
+      padding-right: calc(variables.$gap / 2);
     }
 
     .test{
