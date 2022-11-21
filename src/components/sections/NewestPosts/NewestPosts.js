@@ -40,18 +40,24 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
   return(
     <section>
       <Container>
-        {
-          allPosts.map((post, index) => {
-            const id = post.id;
-            const title = post.title;
-            const excerpt = post.excerpt;
-            const uri = post.uri;
-            const date = post.date;
-            const categories = post.categories.nodes;
-            // return categories;
-            return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox> : ''
-          }) 
-        }
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10">
+            {
+              allPosts.map((post, index) => {
+                const id = post.id;
+                const title = post.title;
+                const excerpt = post.excerpt;
+                const uri = post.uri;
+                const date = post.date;
+                const categories = post.categories.nodes;
+                // return categories;
+                return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox> : ''
+              }) 
+            }
+          </div>
+          <div class="col-1"></div>
+        </div>
       </Container>
     </section>
   )
