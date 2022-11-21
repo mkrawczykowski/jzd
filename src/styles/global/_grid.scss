@@ -1,32 +1,29 @@
+$container-width: 136rem;
 $gap: 2rem;
 
 @for $i from 1 through 12{
-  .col-#{$i} {
-    flex-basis: calc((100%/12)*#{$i});
+  .col#{$i} {
+    flex-basis: calc((100%/12) * #{$i});
   }
 }
+.container{
+  max-width: $container-width;
+  margin: 0 auto;
 
-.row{
-  display: flex;
-  flex: 1 0;
+  .row{
+    display: flex;
+    margin-left: calc($gap / 2 * -1);
+    margin-right: calc($gap / 2 * -1);
 
-  & > div:not(:first-of-type):not(:last-of-type) {
-    padding-left: calc($gap / 2);
-    padding-right: calc($gap / 2);
-  }
+    & > div {
+      padding-left: calc($gap / 2);
+      padding-right: calc($gap / 2);
+    }
 
-  & > div:first-of-type{
-    padding-left: 0;
-    padding-right: calc($gap / 2);
-  }
-
-  & > div:last-of-type{
-    padding-left: calc($gap / 2);
-    padding-right: 0;
-  }
-
-  .cell-test{
-    background: rgb(123, 123, 123);
-  }
+    .test{
+      background: rgb(123, 123, 123);
+    }
+  }  
 }
+
 
