@@ -40,14 +40,17 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
   return(
   <Container>
     <Row>
-      <Col classes='col-md-4 col-xl-6'>
-        testing my custom grid
+      <Col classes='col-sm-6 col-md-6'>
+        <div style={{backgroundColor: 'red'}}>test</div>
       </Col>
-      <Col classes='col-md-4 col-xl-6'>
-        testing my custom grid
+      <Col classes='col-sm-6 col-md-6'>
+        <div style={{backgroundColor: 'red'}}>test</div>
       </Col>
-      <Col classes='col-md-4 col-xl-6'>
-        testing my custom grid
+      <Col classes='col-sm-6 col-md-6'>
+        <div style={{backgroundColor: 'red'}}>test</div>
+      </Col>
+      <Col classes='col-sm-6 col-md-6'>
+        <div style={{backgroundColor: 'red'}}>test</div>
       </Col>
     </Row>
   </Container>

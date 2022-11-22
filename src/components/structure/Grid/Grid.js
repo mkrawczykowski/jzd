@@ -20,10 +20,7 @@ const Row = ( {children} ) => {
 const Col = ( {children, classes} ) => {
     return(
         <div className={`col ${classes}`}>
-            {/* {children} */}
-            {
-                <pre>{JSON.stringify(classes, null, 2)}</pre>
-            }
+            {children}
         </div>
     )
 }

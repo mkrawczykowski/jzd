@@ -1,29 +1,30 @@
 @use '../global/variables';
 
-@each $breakpointName, $breakpointValue in variables.$breakpoints {
-  $indexBreakpoint: index((variables.$breakpoints), ($breakpointName, $breakpointValue));
-
-  @media screen and (min-width:#{$breakpointValue}){
-    @for $i from 1 through 12{
-      .col-#{$breakpointName}-#{$i} {
-        flex-basis: calc((100%/12) * #{$i});
-      }
-    }
-  }
-}
-
 .container{
   max-width: variables.$container-width;
   margin: 0 auto;
 
   .row{
     display: flex;
+    flex-wrap: wrap;
     margin-left: calc(variables.$gap / 2 * -1);
     margin-right: calc(variables.$gap / 2 * -1);
 
     .col{
-      background-color: #b1b1b1;
       padding: 1rem;
+      flex-basis: 100%;
+    }
+
+    @each $breakpointName, $breakpointValue in variables.$breakpoints {
+      $indexBreakpoint: index((variables.$breakpoints), ($breakpointName, $breakpointValue));
+    
+      @media screen and (min-width:#{$breakpointValue}){
+        @for $i from 2 through 12{
+          .col-#{$breakpointName}-#{$i} {
+            flex-basis: calc((100%/12) * #{$i});
+          }
+        }
+      }
     }
 
     // & > div {
