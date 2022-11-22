@@ -1,9 +1,9 @@
 import React from 'react';
-import * as grid from './grid.module.scss';
+import '../../../styles/grid/grid.scss';
 
 const Container = ( {children} ) => {
     return(
-        <div className={grid.container}>
+        <div className="container">
             {children}
         </div>
     )
@@ -11,16 +11,19 @@ const Container = ( {children} ) => {
 
 const Row = ( {children} ) => {
     return(
-        <div className={grid.row}>
+        <div className="row">
             {children}
         </div>
     )
 }
 
-const Col = ( {children} ) => {
+const Col = ( {children, classes} ) => {
     return(
-        <div className={grid.col}>
-            {children}
+        <div className={`col ${classes}`}>
+            {/* {children} */}
+            {
+                <pre>{JSON.stringify(classes, null, 2)}</pre>
+            }
         </div>
     )
 }

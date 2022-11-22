@@ -40,13 +40,13 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
   return(
   <Container>
     <Row>
-      <Col styles={['md-4', 'xl-6']}>
+      <Col classes='col-md-4 col-xl-6'>
         testing my custom grid
       </Col>
-      <Col styles={['md-4', 'xl-6']}>
+      <Col classes='col-md-4 col-xl-6'>
         testing my custom grid
       </Col>
-      <Col styles={['md-4', 'xl-6']}>
+      <Col classes='col-md-4 col-xl-6'>
         testing my custom grid
       </Col>
     </Row>

@@ -1,4 +1,4 @@
-@use '../../../styles/global/variables';
+@use '../global/variables';
 
 @each $breakpointName, $breakpointValue in variables.$breakpoints {
   $indexBreakpoint: index((variables.$breakpoints), ($breakpointName, $breakpointValue));
