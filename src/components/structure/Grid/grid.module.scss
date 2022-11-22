@@ -1,4 +1,4 @@
-@use './variables';
+@use '../../../styles/global/variables';
 
 @each $breakpointName, $breakpointValue in variables.$breakpoints {
   $indexBreakpoint: index((variables.$breakpoints), ($breakpointName, $breakpointValue));
@@ -21,14 +21,16 @@
     margin-left: calc(variables.$gap / 2 * -1);
     margin-right: calc(variables.$gap / 2 * -1);
 
-    & > div {
-      padding-left: calc(variables.$gap / 2);
-      padding-right: calc(variables.$gap / 2);
+    .col{
+      background-color: #b1b1b1;
+      padding: 1rem;
     }
 
-    .test{
-      background: rgb(123, 123, 123);
-    }
+    // & > div {
+    //   padding-left: calc(variables.$gap / 2);
+    //   padding-right: calc(variables.$gap / 2);
+    // }
+
   }  
 }
 
