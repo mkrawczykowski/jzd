@@ -25,4 +25,8 @@ const Col = ( {children, classes} ) => {
     )
 }
 
+Col.defaultProps = {
+    classes: ''
+}
+
 export {Container, Row, Col};
