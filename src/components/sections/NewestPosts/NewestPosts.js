@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from "gatsby";
-// import Container from '../../structure/Container/Container';
-import {Container, Row, Col} from '../../structure/Grid/Grid';
-// import PostBox from '../../partials/PostBox/PostBox';
+import { Container, Row, Col } from '../../structure/Grid/Grid';
+import PostBox from '../../partials/PostBox/PostBox';
 // import * as styles from './NewestPosts.module.scss';
 
 const NewestPosts = ({ data }) => {
@@ -10,6 +9,7 @@ const NewestPosts = ({ data }) => {
   const newestPostsNumber = data.newestPostsNumber;
   const skip = data.skip;
   const layout = data.layout;
+  const sectionsHeading = data.sectionsheading
 
   const postsQuery = useStaticQuery(graphql`
   query{
@@ -38,22 +38,37 @@ const NewestPosts = ({ data }) => {
 const allPosts = postsQuery.wpgraphql.posts.nodes;
 
   return(
-  <Container>
-    <Row>
-      <Col classes='col-sm-6 col-md-6'>
-        <div style={{backgroundColor: 'red'}}>test</div>
-      </Col>
-      <Col classes='col-sm-6 col-md-6'>
-        <div style={{backgroundColor: 'red'}}>test</div>
-      </Col>
-      <Col classes='col-sm-6 col-md-6'>
-        <div style={{backgroundColor: 'red'}}>test</div>
-      </Col>
-      <Col classes='col-sm-6 col-md-6'>
-        <div style={{backgroundColor: 'red'}}>test</div>
-      </Col>
-    </Row>
-  </Container>
+    <section>
+      <Container>
+        { sectionsHeading ? 
+            <Row>
+              <Col>
+                <h3>{ sectionsHeading }</h3>
+              </Col>
+            </Row>
+           : null
+        }
+        {
+          <Row>
+            {
+              allPosts.map((post, index) => {
+                const id = post.id;
+                const title = post.title;
+                const excerpt = post.excerpt;
+                const uri = post.uri;
+                const date = post.date;
+                const categories = post.categories.nodes;
+                return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? 
+                <Col classes="col-lg-6">
+                  <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
+                </Col> 
+                : null
+              })
+            }
+          </Row> 
+        }
+      </Container>
+    </section>
 
 
 
