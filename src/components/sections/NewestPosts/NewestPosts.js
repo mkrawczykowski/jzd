@@ -41,12 +41,12 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
     <section>
       <Container>
         { sectionsHeading ? 
-            <Row>
-              <Col>
-                <h3>{ sectionsHeading }</h3>
-              </Col>
-            </Row>
-           : null
+          <Row>
+            <Col>
+              <h3>{ sectionsHeading }</h3>
+            </Col>
+          </Row>
+          : null
         }
         {
           <Row>
@@ -58,6 +58,7 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
                 const uri = post.uri;
                 const date = post.date;
                 const categories = post.categories.nodes;
+                
                 return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? 
                 <Col classes="col-lg-6">
                   <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
@@ -69,34 +70,6 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
         }
       </Container>
     </section>
-
-
-
-    // <section>
-    //   <div className={grid.container}>
-    //     <div className={grid.row}>
-    //       <div className={grid['col-3xl-1']}><div className={grid.test}>aaaaaa</div></div>
-    //       <div className={styles['col-3xl-6']}>
-    //         <div className={grid.test}>
-    //           {
-    //             allPosts.map((post, index) => {
-    //               const id = post.id;
-    //               const title = post.title;
-    //               const excerpt = post.excerpt;
-    //               const uri = post.uri;
-    //               const date = post.date;
-    //               const categories = post.categories.nodes;
-    //               // return categories;
-    //               return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox> : ''
-    //             })
-    //           }
-    //         </div>
-    //       </div>
-    //       <div className={grid['col-3xl-4']}><div className={grid.test}>aaaaaa</div></div>
-    //       <div className={grid['col-3xl-1']}><div className={grid.test}>aaaaaa</div></div>
-    //     </div>
-    //   </div>
-    // </section>
   )
 };
 
