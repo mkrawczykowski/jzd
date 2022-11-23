@@ -43,7 +43,7 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
         { sectionsHeading ? 
           <Row>
             <Col>
-              <h3>{ sectionsHeading }</h3>
+              <h3>{sectionsHeading}</h3>
             </Col>
           </Row>
           : null
@@ -54,13 +54,23 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
               allPosts.map((post, index) => {
                 const id = post.id;
                 const title = post.title;
-                const excerpt = post.excerpt;
                 const uri = post.uri;
                 const date = post.date;
                 const categories = post.categories.nodes;
+                let excerpt = '';
+                let colClasses = '';
+
+                if (layout === 'withExcerpt') {
+                  colClasses = '';
+                  excerpt = post.ACFpostExcerpt.excerpt;
+                }
+
+                if (layout === 'withoutExcerpt') {
+                  colClasses = 'col-lg-6';
+                }
                 
                 return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? 
-                <Col classes="col-lg-6">
+                <Col classes={colClasses}>
                   <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
                 </Col> 
                 : null
