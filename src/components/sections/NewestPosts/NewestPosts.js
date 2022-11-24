@@ -42,9 +42,11 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
       <Container>
         { sectionsHeading ? 
           <Row>
-            <Col>
+            <Col classes="col-lg-1"></Col>
+            <Col classes="col-lg-10">
               <h3>{sectionsHeading}</h3>
             </Col>
+            <Col classes="col-lg-1"></Col>
           </Row>
           : null
         }
@@ -69,12 +71,17 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
                   colClasses = 'col-lg-6';
                 }
                 
-                return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? 
-                <Col classes={colClasses}>
-                  {/* <pre>{ JSON.stringify(post.ACFpostExcerpt.postExcerpt, null, 2) }</pre> */}
-                  <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
-                </Col> 
-                : null
+                if (index + 1 > skip && index + 1 <= newestPostsNumber + skip){
+                  return(
+                    <>
+                      <Col classes="col-lg-1"></Col>
+                      <Col classes={colClasses}>
+                        <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
+                      </Col>
+                      <Col classes="col-lg-1"></Col>
+                    </>
+                  )
+                }
               })
             }
           </Row> 
