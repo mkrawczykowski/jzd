@@ -9,8 +9,8 @@ const PostBox = ({ id, title, excerpt, uri, date, categories }) => {
       <PostCategories categories={ categories }></PostCategories>
       <RoundedButton href={ uri }></RoundedButton>
       <p>{ date }</p>
-      {/* {excerpt ? <p>{excerpt}</p> : null} */}
-      <pre>{JSON.stringify(excerpt, null, 2)}</pre>
+      {excerpt ? <p>{excerpt}</p> : null}
+      {/* <pre>{JSON.stringify(excerpt, null, 2)}</pre> */}
     </div>
   )
 }

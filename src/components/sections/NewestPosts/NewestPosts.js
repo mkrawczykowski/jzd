@@ -62,7 +62,7 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
 
                 if (layout === 'withExcerpt') {
                   colClasses = '';
-                  excerpt = post.ACFpostExcerpt.excerpt;
+                  excerpt = post.ACFpostExcerpt.postExcerpt;
                 }
 
                 if (layout === 'withoutExcerpt') {
@@ -71,6 +71,7 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
                 
                 return index + 1 > skip && index + 1 <= newestPostsNumber + skip ? 
                 <Col classes={colClasses}>
+                  {/* <pre>{ JSON.stringify(post.ACFpostExcerpt.postExcerpt, null, 2) }</pre> */}
                   <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
                 </Col> 
                 : null
