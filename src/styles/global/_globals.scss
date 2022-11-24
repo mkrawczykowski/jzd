@@ -5,6 +5,11 @@ html {
   font-family: 'Raleway', sans-serif;
 }
 
+body{
+  background-color: variables.$darkgray;
+  color: variables.$white;
+}
+
 a{
   font-family: 'Raleway', sans-serif;
   font-size: 1.5rem;
