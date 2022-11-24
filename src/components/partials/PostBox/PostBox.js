@@ -5,12 +5,11 @@ import PostCategories from '../PostCategories/PostCategories';
 const PostBox = ({ id, title, excerpt, uri, date, categories }) => {
   return(
     <div>
-      <h2>{ title }</h2>
+      { title ? <h2>{ title }</h2> : null}
       <PostCategories categories={ categories }></PostCategories>
       <RoundedButton href={ uri }></RoundedButton>
-      <p>{ date }</p>
+      {date? <p>{ date }</p> : null}
       {excerpt ? <p>{excerpt}</p> : null}
-      {/* <pre>{JSON.stringify(excerpt, null, 2)}</pre> */}
     </div>
   )
 }

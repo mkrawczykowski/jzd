@@ -24,21 +24,24 @@ export const query = graphql`
   }
 `
 
-const CategoryTemplate = ( { data } ) =>{ 
+const CategoryTemplate = ({data}) =>{ 
   const category = data.wpgraphql.category;
   const posts = data.wpgraphql.category.posts.nodes;
 
   return(
     <Layout>
       <Container>
-        { category.name }
         {
           posts.map(post => {
+            const title = post.title;
+            const postExcerpt = post.ACFpostExcerpt.postExcerpt;;
+            const uri = post.uri;
+
             return(
               <div>
-                <h2>{ post.title }</h2>
-                <p>{ post.ACFpostExcerpt.postExcerpt }</p>
-                <p>{ post.uri }</p>
+                {title ? <h2>{title}</h2> : null}
+                {postExcerpt ? <p>{postExcerpt}</p> : null}
+                {uri ? <p>{uri}</p> : null}
                 <p>{ post.date }</p>
               </div> 
             )

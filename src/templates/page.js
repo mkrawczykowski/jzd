@@ -28,6 +28,7 @@ export const query = graphql`
                 date
                 categories {
                   nodes {
+                    id
                     uri
                     name
                   }
@@ -48,16 +49,15 @@ const PageTemplate = ( { data, location } ) => {
   
   return(
     <Layout>
-      {/* <pre>{ JSON.stringify(acfOptions,null,2) }</pre> */}
       {
         location.pathname === '/' ? <HPSlider acfOptions={ acfOptions }></HPSlider> : ''
       }
       
       { 
-        flexSections.map(flexibleSection => {
+        flexSections.map((flexibleSection, index) => {
           const {__typename, ...sectionData} = flexibleSection;
           return(
-            <FlexibleSections typename={__typename} sectionData={{...sectionData}} />
+            <FlexibleSections key={index} typename={__typename} sectionData={{...sectionData}} />
           )
         }) 
       }

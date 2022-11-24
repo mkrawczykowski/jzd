@@ -11,6 +11,7 @@ const Mainmenu = () =>{
             nodes {
               label
               uri
+              id
             }
           }
         }
@@ -26,7 +27,7 @@ const Mainmenu = () =>{
         <ul>
           { mainMenuQuery.wpgraphql.menu.menuItems.nodes.map( link => {
             return(
-              <li>{ link.label }</li>
+              <li key={link.id}>{ link.label }</li>
             )
           })
           }

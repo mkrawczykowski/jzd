@@ -8,29 +8,26 @@ import 'swiper/css';
 const HPSlider = ({ acfOptions }) => {
 
   const HPSlides = acfOptions.slides;
-  // <pre>{ JSON.stringify(acfOptions.slides,null,2) }</pre>
   return(
     <Container>
-      {/* <pre>{ JSON.stringify(HPSlides,null,2) }</pre> */}
-
       <Swiper>
-
         {
           HPSlides.map(HPSlide => {
             const slideCategories = HPSlide.slide.categories.nodes;
+            const id = HPSlide.slide.title;
+            const title = HPSlide.slide.title;
+            const date = HPSlide.slide.date;
+            const uri = HPSlide.slide.uri;
+
             return(
-              <SwiperSlide>
-                {/* { JSON.stringify(HPSlide.slide.categories.nodes,null,2) } */}
-                {/* <pre>{ JSON.stringify(slide.categories.nodes,null,2) }</pre> */}
-                <h2>{ HPSlide.slide.title }</h2>
-                <p>{ HPSlide.slide.date }</p>
-                <a href={ HPSlide.slide.uri }>Czytaj więcej</a>
+              <SwiperSlide key={id}>
+                {title ? <h2>{title}</h2> : null}
+                {date ? <p>{date}</p> : null}
+                {uri ? <a href={uri}>Czytaj więcej</a> : null}
                 {
                   slideCategories.map(slideCategory => {
                     return(
-                      
-                        <a href={ slideCategory.uri }><p>{ slideCategory.name }</p> </a>
-                      
+                        <a key={id} href={slideCategory.uri}><p>{slideCategory.name}</p> </a>
                     )
                   })
                 }
@@ -40,29 +37,7 @@ const HPSlider = ({ acfOptions }) => {
         }
       </Swiper>
     </Container>
-    
   )
 }
 
 export default HPSlider;
-
-// export const query = graphql(`
-//   fragment HPSliderFragment{
-//     slides {
-//       slide {
-//         ... on WPGraphQL_Post {
-//           id
-//           uri
-//           title
-//           date
-//           categories {
-//             nodes {
-//               uri
-//               name
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `)
