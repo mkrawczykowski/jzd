@@ -59,28 +59,39 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
                 const uri = post.uri;
                 const date = post.date;
                 const categories = post.categories.nodes;
-                let excerpt = '';
-                let colClasses = '';
-
-                if (layout === 'withExcerpt') {
-                  colClasses = '';
-                  excerpt = post.ACFpostExcerpt.postExcerpt;
-                }
-
-                if (layout === 'withoutExcerpt') {
-                  colClasses = 'col-lg-6';
-                }
                 
                 if (index + 1 > skip && index + 1 <= newestPostsNumber + skip){
-                  return(
-                    <>
-                      <Col classes="col-lg-1"></Col>
-                      <Col classes={colClasses}>
-                        <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
-                      </Col>
-                      <Col classes="col-lg-1"></Col>
-                    </>
-                  )
+
+                    let excerpt = '';
+                    let colClasses = '';
+
+                    if (layout === 'withExcerpt') {
+                      excerpt = post.ACFpostExcerpt.postExcerpt;
+
+                      return(
+                        <>
+                          <Col classes="col-lg-2"></Col>
+                          <Col classes={'col-lg-8'}>
+                            <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
+                          </Col>
+                          <Col classes="col-lg-2"></Col>
+                        </>
+                      )
+                      
+                    }
+                    if (layout === 'withoutExcerpt') {
+                      colClasses = 'col-lg-5';
+
+                      return(
+                        <>
+                          {index % 2 ? <Col classes="col-lg-2"></Col> : null}
+                          <Col classes={'col-lg-4'}>
+                            <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
+                          </Col>
+                          {index % 2 ? null : <Col classes="col-lg-2"></Col>}
+                        </>
+                      )
+                    }
                 }
               })
             }

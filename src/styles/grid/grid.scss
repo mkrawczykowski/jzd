@@ -19,7 +19,7 @@
       $indexBreakpoint: index((variables.$breakpoints), ($breakpointName, $breakpointValue));
     
       @media screen and (min-width:#{$breakpointValue}){
-        @for $i from 2 through 12{
+        @for $i from 1 through 12{
           .col-#{$breakpointName}-#{$i} {
             flex-basis: calc((100%/12) * #{$i});
           }
