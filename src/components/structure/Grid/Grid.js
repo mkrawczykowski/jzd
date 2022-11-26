@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../styles/grid/grid.scss';
 
-const Container = ( {children} ) => {
+const Container = ({children}) => {
     return(
         <div className="container">
             {children}
@@ -9,7 +9,7 @@ const Container = ( {children} ) => {
     )
 }
 
-const Row = ( {children} ) => {
+const Row = ({children}) => {
     return(
         <div className="row">
             {children}
@@ -17,7 +17,7 @@ const Row = ( {children} ) => {
     )
 }
 
-const Col = ( {children, classes} ) => {
+const Col = ({children, classes}) => {
     return(
         <div className={`col ${classes}`}>
             {children}
