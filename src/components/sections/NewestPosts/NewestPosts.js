@@ -4,7 +4,7 @@ import { Container, Row, Col } from '../../structure/Grid/Grid';
 import PostBox from '../../partials/PostBox/PostBox';
 // import * as styles from './NewestPosts.module.scss';
 
-const NewestPosts = ({ data }) => {
+const NewestPosts = ({data}) => {
 
   const newestPostsNumber = data.newestPostsNumber;
   const skip = data.skip;
@@ -57,8 +57,11 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
                 const id = post.id;
                 const title = post.title;
                 const uri = post.uri;
-                const date = post.date;
                 const categories = post.categories.nodes;
+
+                const dateOptions = { year: 'numeric', month: '2-digit', day: 'numeric' };
+                const date = new Date(post.date).toLocaleDateString('pl-PL', dateOptions).replaceAll('-', '.');
+                
                 
                 if (index + 1 > skip && index + 1 <= newestPostsNumber + skip){
 
