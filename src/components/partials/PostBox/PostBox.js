@@ -7,8 +7,8 @@ const PostBox = ({id, title, excerpt, uri, date, categories}) => {
     <div>
       {title ? <h2>{title}</h2> : null}
       <PostCategories categories={categories} date={date}></PostCategories>
-      <RoundedButton href={uri}></RoundedButton>
       {excerpt ? <p>{excerpt}</p> : null}
+      <RoundedButton href={uri}></RoundedButton>
     </div>
   )
 }
