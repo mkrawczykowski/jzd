@@ -1,4 +1,9 @@
 @use '../global/variables';
+@use 'sass:math';
+
+// https://www.sitepoint.com/understanding-sass-units/
+$colWidth:  math.div(variables.$container-width, 12) * 1rem;
+// $colWidth:  variables.$container-width;
 
 .container{
   max-width: variables.$container-width;
@@ -21,7 +26,7 @@
       @media screen and (min-width:#{$breakpointValue}){
         @for $i from 1 through 12{
           .col-#{$breakpointName}-#{$i} {
-            flex-basis: calc((100%/12) * #{$i});
+            flex-basis: calc(#{$colWidth} * #{$i});
           }
         }
       }
