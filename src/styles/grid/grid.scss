@@ -16,7 +16,8 @@ $colWidth:  math.div(variables.$container-width, 12) * 1rem;
     margin-right: calc(variables.$gap / 2 * -1);
 
     .col{
-      padding: 1rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
       flex-basis: 100%;
     }
 
