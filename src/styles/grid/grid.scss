@@ -1,9 +1,7 @@
 @use '../global/variables';
 @use 'sass:math';
 
-// https://www.sitepoint.com/understanding-sass-units/
 $colWidth:  math.div(variables.$container-width, 12) * 1rem;
-// $colWidth:  variables.$container-width;
 
 .container{
   max-width: calc(variables.$container-width * 1rem);
@@ -11,7 +9,7 @@ $colWidth:  math.div(variables.$container-width, 12) * 1rem;
 
   .row{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-left: calc(variables.$gap / 2 * -1);
     margin-right: calc(variables.$gap / 2 * -1);
 
