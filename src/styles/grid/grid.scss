@@ -6,7 +6,7 @@ $colWidth:  math.div(variables.$container-width, 12) * 1rem;
 // $colWidth:  variables.$container-width;
 
 .container{
-  max-width: variables.$container-width;
+  max-width: calc(variables.$container-width * 1rem);
   margin: 0 auto;
 
   .row{
