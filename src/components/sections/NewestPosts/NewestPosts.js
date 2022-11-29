@@ -40,6 +40,15 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
   return(
     <section>
       <Container>
+        <Row>
+          <Col classes="col-lg-1">col-lg-1</Col>
+        </Row>
+        <Row>
+          <Col classes="col-lg-2">col-lg-2</Col>
+        </Row>
+        <Row>
+          <Col classes="col-lg-3">col-lg-3</Col>
+        </Row>
         { sectionsHeading ? 
           <Row>
             <Col classes="col-lg-1"></Col>
@@ -50,8 +59,6 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
           </Row>
           : null
         }
-        {
-          <Row>
             {
               allPosts.map((post, index) => {
                 const id = post.id;
@@ -71,33 +78,31 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
                     excerpt = post.ACFpostExcerpt.postExcerpt;
 
                     return(
-                      <>
+                      <Row>
                         <Col classes="col-lg-2"></Col>
-                        <Col classes={'col-lg-8'}>
+                        <Col classes='col-lg-8'>
                           <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
                         </Col>
                         <Col classes="col-lg-2"></Col>
-                      </>
+                      </Row>
                     )
                   }
                   if (layout === 'withoutExcerpt') {
                     colClasses = 'col-lg-5';
 
                     return(
-                      <>
+                      <Row>
                         {index % 2 ? <Col classes="col-lg-2"></Col> : null}
-                        <Col classes={'col-lg-4'}>
+                        <Col classes='col-lg-4'>
                           <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
                         </Col>
                         {index % 2 ? null : <Col classes="col-lg-2"></Col>}
-                      </>
+                      </Row>
                     )
                   }
                 }
               })
             }
-          </Row> 
-        }
       </Container>
     </section>
   )
