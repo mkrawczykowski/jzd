@@ -37,6 +37,7 @@ const NewestPosts = ({data}) => {
 
 const allPosts = postsQuery.wpgraphql.posts.nodes;
 
+let twoPostsInRow = [];
 
   return(
     <section>
@@ -82,10 +83,49 @@ const allPosts = postsQuery.wpgraphql.posts.nodes;
 
                   
                   if (layout === 'withoutExcerpt') {
-                    twoPostsInRow.push(
-                      <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
-                    )
-                      console.log(twoPostsInRow)
+                    if (allPostsIndex % 2 == 0 || allPostsIndex === 0){
+                      twoPostsInRow.push(
+                        {
+                          index: allPostsIndex,
+                          id: id,
+                          title: title,
+                          uri: uri,
+                          date: date,
+                          categories: categories
+                        }
+                        // <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
+                      )
+                      return(
+                        <>
+                          <PostBox id={id} title={title} uri={uri} date={date} categories={categories}/>
+                          <pre>{JSON.stringify(twoPostsInRow, null, 2)}</pre>                        
+                        </>
+                      )
+                    }
+                    if (allPostsIndex % 2 != 0){
+                      twoPostsInRow.push(
+                        {
+                          index: allPostsIndex,
+                          id: id,
+                          title: title,
+                          uri: uri,
+                          date: date,
+                          categories: categories
+                        }
+                      )
+                      return(
+                          // <pre>{JSON.stringify(twoPostsInRow, null, 2)}</pre>                        
+
+                        twoPostsInRow.map((postInRow) => {
+                          <>
+                            <PostBox id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
+                            <pre>{JSON.stringify(twoPostsInRow, null, 2)}</pre>                        
+                          </>
+                        })
+                      )
+                      twoPostsInRow = [];
+                    }
+                    
 
                     // if (allPostsIndex % 2 !== 0 && allPostsIndex !== 0){
                     //   return(
