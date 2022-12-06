@@ -82,10 +82,13 @@ let twoPostsInRow = [];
                   }
                   
                   if (layout === 'withoutExcerpt') {
-                    
-                    if (allPostsIndex-skip % 2 == 0){
+                    var a = allPostsIndex-skip;
+                    if (a % 2 == 0){
+                      
+                      console.log('parzyste:');
+                      console.log(allPostsIndex-skip);
                       twoPostsInRow = new Array()
-                      console.log(twoPostsInRow);
+                      
                       twoPostsInRow.push(
                         {
                           index: allPostsIndex,
@@ -98,16 +101,22 @@ let twoPostsInRow = [];
                         
                         // <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
                       )
+                      console.log(JSON.stringify(twoPostsInRow));
                       return(
                         <>
-                        <h2>11: {allPostsIndex-skip}</h2>
+                        {/* <h2>11: {allPostsIndex-skip}</h2>
                           <PostBox key={id} id={id} title={title} uri={uri} date={date} categories={categories}/>
                           <pre>{allPostsIndex-skip} {JSON.stringify(twoPostsInRow, null, 2)}</pre>
-                          <p>===================</p>
+                          <p>===================</p> */}
                         </>
                       )
                     }
                     if (allPostsIndex-skip % 2 !== 0){
+                      var b = allPostsIndex-skip;
+                      var tt = b % 2 == 0;
+                      console.log(tt);
+                      console.log('nieparzyste:');
+                      console.log(allPostsIndex-skip);
                       twoPostsInRow.push(
                         {
                           index: allPostsIndex,
@@ -117,8 +126,11 @@ let twoPostsInRow = [];
                           date: date,
                           categories: categories
                         }
+
                         
                       )
+                      console.log(JSON.stringify(twoPostsInRow));
+                    
                       return(
                         <>
                         <h2>22: {allPostsIndex-skip}</h2>
