@@ -74,7 +74,7 @@ let twoPostsInRow = [];
                       <Row>
                         <Col classes="col-lg-2"></Col>
                         <Col classes='col-lg-8'>
-                          <PostBox id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
+                          <PostBox key={id} id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
                         </Col>
                         <Col classes="col-lg-2"></Col>
                       </Row>
@@ -83,8 +83,9 @@ let twoPostsInRow = [];
                   
                   if (layout === 'withoutExcerpt') {
                     
-                    if (allPostsIndex-skip % 2 === 0){
-                      twoPostsInRow = [];
+                    if (allPostsIndex-skip % 2 == 0){
+                      twoPostsInRow = new Array()
+                      console.log(twoPostsInRow);
                       twoPostsInRow.push(
                         {
                           index: allPostsIndex,
@@ -100,7 +101,7 @@ let twoPostsInRow = [];
                       return(
                         <>
                         <h2>11: {allPostsIndex-skip}</h2>
-                          <PostBox id={id} title={title} uri={uri} date={date} categories={categories}/>
+                          <PostBox key={id} id={id} title={title} uri={uri} date={date} categories={categories}/>
                           <pre>{allPostsIndex-skip} {JSON.stringify(twoPostsInRow, null, 2)}</pre>
                           <p>===================</p>
                         </>
@@ -126,7 +127,7 @@ let twoPostsInRow = [];
                           { twoPostsInRow.map((postInRow) => {
                             return(
                               <>
-                                <PostBox id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
+                                <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
                                 <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre>
                               </>  
                             )
