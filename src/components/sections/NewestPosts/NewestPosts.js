@@ -80,10 +80,11 @@ let twoPostsInRow = [];
                       </Row>
                     )
                   }
-
                   
                   if (layout === 'withoutExcerpt') {
-                    if (allPostsIndex % 2 == 0 || allPostsIndex === 0){
+                    
+                    if (allPostsIndex-skip % 2 === 0){
+                      twoPostsInRow = [];
                       twoPostsInRow.push(
                         {
                           index: allPostsIndex,
@@ -93,16 +94,19 @@ let twoPostsInRow = [];
                           date: date,
                           categories: categories
                         }
+                        
                         // <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
                       )
                       return(
                         <>
+                        <h2>11: {allPostsIndex-skip}</h2>
                           <PostBox id={id} title={title} uri={uri} date={date} categories={categories}/>
-                          <pre>{JSON.stringify(twoPostsInRow, null, 2)}</pre>                        
+                          <pre>{allPostsIndex-skip} {JSON.stringify(twoPostsInRow, null, 2)}</pre>
+                          <p>===================</p>
                         </>
                       )
                     }
-                    if (allPostsIndex % 2 != 0){
+                    if (allPostsIndex-skip % 2 !== 0){
                       twoPostsInRow.push(
                         {
                           index: allPostsIndex,
@@ -112,18 +116,26 @@ let twoPostsInRow = [];
                           date: date,
                           categories: categories
                         }
+                        
                       )
                       return(
-                          // <pre>{JSON.stringify(twoPostsInRow, null, 2)}</pre>                        
-
-                        twoPostsInRow.map((postInRow) => {
-                          <>
-                            <PostBox id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
-                            <pre>{JSON.stringify(twoPostsInRow, null, 2)}</pre>                        
-                          </>
-                        })
+                        <>
+                        <h2>22: {allPostsIndex-skip}</h2>
+                          <pre>{allPostsIndex-skip}: {JSON.stringify(twoPostsInRow, null, 2)}</pre>                        
+                          <p>==========55555555555=========</p>
+                          { twoPostsInRow.map((postInRow) => {
+                            return(
+                              <>
+                                <PostBox id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
+                                <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre>
+                              </>  
+                            )
+                          })
+                          }
+                        </>
                       )
-                      twoPostsInRow = [];
+                      
+                      
                     }
                     
 
