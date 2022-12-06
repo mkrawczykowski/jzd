@@ -101,7 +101,7 @@ let twoPostsInRow = [];
                         
                         // <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
                       )
-                      console.log(JSON.stringify(twoPostsInRow));
+                      console.log(twoPostsInRow);
                       return(
                         <>
                         {/* <h2>11: {allPostsIndex-skip}</h2>
@@ -126,25 +126,24 @@ let twoPostsInRow = [];
                           date: date,
                           categories: categories
                         }
-
-                        
                       )
-                      console.log(JSON.stringify(twoPostsInRow));
+                      console.log(twoPostsInRow);
                     
                       return(
                         <>
-                        <h2>22: {allPostsIndex-skip}</h2>
-                          <pre>{allPostsIndex-skip}: {JSON.stringify(twoPostsInRow, null, 2)}</pre>                        
+                          {/* <pre>{allPostsIndex-skip}: {JSON.stringify(twoPostsInRow, null, 2)}</pre>                         */}
                           <p>==========55555555555=========</p>
+                          <Row>
                           { twoPostsInRow.map((postInRow) => {
                             return(
                               <>
                                 <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
-                                <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre>
+                                {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
                               </>  
                             )
                           })
                           }
+                          </Row>
                         </>
                       )
                       
