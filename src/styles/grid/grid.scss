@@ -17,10 +17,6 @@ $colWidth:  (round(math.div(variables.$container-width, 12) * 10) / 10) * 1rem;
       padding-right: 1rem;
       padding-left: 1rem;
       flex-basis: 100%;
-
-      div{
-        background-color: red;  
-      }
     }
 
     @each $breakpointName, $breakpointValue in variables.$breakpoints {
