@@ -10,7 +10,7 @@ const PostBox = ({id, title, excerpt, uri, date, categories}) => {
       <div className={styles.postBox}>
         <Row>
           <Col classes="col-lg-5">
-            {title ? <h2 className={styles.postBox__title}>{title}</h2> : null}
+            {title && uri ? <a href={uri}><h2 className={styles.postBox__title}>{title}</h2></a> : null}
             <PostCategories categories={categories} date={date}></PostCategories>
           </Col>
           <Col classes="col-lg-3">
@@ -23,7 +23,7 @@ const PostBox = ({id, title, excerpt, uri, date, categories}) => {
   } else {
     return(
       <div className={styles.postBox}>
-        {title ? <h2 className={styles.postBox__title}>{title}</h2> : null}
+        {title && uri ? <a href={uri}><h2 className={styles.postBox__title}>{title}</h2></a> : null}
         <PostCategories categories={categories} date={date}></PostCategories>
         <RoundedButton href={uri}></RoundedButton>
       </div>
