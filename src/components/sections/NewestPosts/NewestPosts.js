@@ -1,8 +1,7 @@
 import React from 'react';
-import { graphql, useStaticQuery } from "gatsby";
-import { Container, Row, Col } from '../../structure/Grid/Grid';
+import {graphql, useStaticQuery} from "gatsby";
+import {Container, Row, Col} from '../../structure/Grid/Grid';
 import PostBox from '../../partials/PostBox/PostBox';
-// import * as styles from './NewestPosts.module.scss';
 
 const NewestPosts = ({data}) => {
 
@@ -131,19 +130,16 @@ let twoPostsInRow = [];
                     
                       return(
                         <>
-                          {/* <pre>{allPostsIndex-skip}: {JSON.stringify(twoPostsInRow, null, 2)}</pre>                         */}
-
-
+                          {/* <pre>{allPostsIndex-skip}: {JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
                           <Row>
                             <Col classes="col col-xl-2"></Col>
                             { twoPostsInRow.map((postInRow) => {
+                              console.log(`uri: ${postInRow.uri}`)
                               return(
-                                <>
-                                  <Col classes="col col-xl-4">
-                                    <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
-                                    {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
-                                  </Col>
-                                </>  
+                                <Col classes="col col-xl-4">
+                                  <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
+                                  {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
+                                </Col>
                               )
                             })
                             }
@@ -189,9 +185,6 @@ let twoPostsInRow = [];
                         //     <Col classes="col-lg-2"></Col>
                         //   </>
                         // )
-                    
-
-                    
                   }
                 }
               })

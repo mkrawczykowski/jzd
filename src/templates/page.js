@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import {graphql} from 'gatsby';
 import Layout from '../components/structure/Layout/Layout';
 import FlexibleSections from '../components/sections/_FlexibleSections/FlexibleSections';
 import HPSlider from '../components/structure/HPSlider/HPSlider';

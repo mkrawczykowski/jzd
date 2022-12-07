@@ -1,11 +1,11 @@
 import React from 'react';
-import Container from '../Container/Container';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Container} from '../../structure/Grid/Grid';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import './HPSlider.module.scss';
 
 import 'swiper/css';
 
-const HPSlider = ({ acfOptions }) => {
+const HPSlider = ({acfOptions}) => {
 
   const HPSlides = acfOptions.slides;
   return(

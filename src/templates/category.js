@@ -1,7 +1,7 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import {graphql} from 'gatsby';
 import Layout from '../components/structure/Layout/Layout';
-import Container from '../components/structure/Container/Container';
+import {Container} from '../components/structure/Grid/Grid';
 
 export const query = graphql`
   query($id: ID!){

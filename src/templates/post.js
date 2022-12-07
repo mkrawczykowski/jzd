@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import {graphql} from 'gatsby';
 import Layout from '../components/structure/Layout/Layout';
 
 export const query = graphql`
@@ -12,13 +12,12 @@ export const query = graphql`
   }
 `
 
-const PostTemplate = ( { data } ) =>{ 
+const PostTemplate = ({data}) =>{ 
   const post = data.wpgraphql.post;
 
   return(
     <Layout>
-      { post.title }
-      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+      {post.title}
     </Layout>
   )
 
