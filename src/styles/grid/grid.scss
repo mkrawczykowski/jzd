@@ -1,7 +1,7 @@
 @use '../global/variables';
 @use 'sass:math';
 
-$colWidth:  math.div(variables.$container-width, 12) * 1rem;
+$colWidth:  (round(math.div(variables.$container-width, 12) * 10) / 10) * 1rem;
 
 .container{
   max-width: calc(variables.$container-width * 1rem);
@@ -17,6 +17,10 @@ $colWidth:  math.div(variables.$container-width, 12) * 1rem;
       padding-right: 1rem;
       padding-left: 1rem;
       flex-basis: 100%;
+
+      div{
+        background-color: red;  
+      }
     }
 
     @each $breakpointName, $breakpointValue in variables.$breakpoints {
