@@ -1,14 +1,18 @@
 import React from 'react';
-import { graphql } from "gatsby";
-import Container from '../../structure/Container/Container';
+import {graphql} from "gatsby";
+import {Container, Row, Col} from '../../structure/Grid/Grid';
 
-const WYSIWYGEditor = ({ data }) => {
+const WYSIWYGEditor = ({data}) => {
   return(
-    <Container>
-      <section>
-        <p dangerouslySetInnerHTML={{__html: data.wysiwygEditor}}></p>
-      </section>
-    </Container>
+    <section>
+      <Container>
+        <Row>
+          <Col classes="col col-xl-10">
+            <div dangerouslySetInnerHTML={{__html: data.wysiwygEditor}}></div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
   )
 }
 
