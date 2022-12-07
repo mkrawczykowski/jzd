@@ -132,17 +132,22 @@ let twoPostsInRow = [];
                       return(
                         <>
                           {/* <pre>{allPostsIndex-skip}: {JSON.stringify(twoPostsInRow, null, 2)}</pre>                         */}
-                          <p>==========55555555555=========</p>
+
+
                           <Row>
-                          { twoPostsInRow.map((postInRow) => {
-                            return(
-                              <>
-                                <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
-                                {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
-                              </>  
-                            )
-                          })
-                          }
+                            <Col classes="col col-xl-2"></Col>
+                            { twoPostsInRow.map((postInRow) => {
+                              return(
+                                <>
+                                  <Col classes="col col-xl-4">
+                                    <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
+                                    {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
+                                  </Col>
+                                </>  
+                              )
+                            })
+                            }
+                            <Col classes="col col-xl-2"></Col>
                           </Row>
                         </>
                       )
