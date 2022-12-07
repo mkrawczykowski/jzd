@@ -6,9 +6,9 @@ const PostCategories = ({categories, date}) => {
     <div className={styles.postCategories}>
       <ul className={styles.postCategories__categories}>
         { 
-          categories.map(category => {
+          categories.map((category, categoryIndex) => {
             return(
-              <li><a href={category.uri}>{category.name}</a></li>
+              <li key={categoryIndex} className={styles.postCategories__category}><a href={category.uri} className={styles.postCategories__link}>{category.name}</a></li>
             )
           })
         }

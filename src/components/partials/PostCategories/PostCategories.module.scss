@@ -1,10 +1,62 @@
+@use '../../../styles/global';
+
 .post-categories{
-    color: #fff;
+    color: global.$white;
+    display: flex;
+
     &__categories{
-        color: #fff;
+        color: global.$white;
+        display: flex;
+        margin-right: 1.5rem;
+
+            &:after{
+                content: '';
+                width: 0.5rem;
+                height: 0.5rem;
+                display: inline-block;
+                background-color: global.$purple;
+                border-radius: 50%;
+                position: relative;
+                right: -0.4rem;
+                top: 0.3rem;
+            }
+
+        .post-categories__category{
+            font-family: global.$font-main;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 130%;
+            position: relative;
+            margin: 0 0.8rem 0 0;
+
+            &:not(:last-of-type){
+                &:after{
+                    content: ', ';
+                    position: relative;
+                    right: -0.2rem;
+                }                
+            }
+
+            .post-categories__link{
+                font-family: global.$font-main;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1.2rem;
+                line-height: 130%;
+
+                &:after{
+                    width: 0;
+                }
+            }
+        }
     }
 
     &__date{
-        color: #fff;
+        color: global.$white;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 130%;
     }
 }
