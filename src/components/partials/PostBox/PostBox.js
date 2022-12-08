@@ -24,7 +24,7 @@ const PostBox = ({id, title, excerpt, uri, date, categories}) => {
   } else {
     return(
       <div className={styles.postBox}>
-        {title && uri ? <a href={uri}><h2 className={styles.postBox__title}>{title}</h2></a> : null}
+        {title && uri ? <a href={uri} className={styles.postBox__title}><h2>{title}</h2></a> : null}
         <PostCategories categories={categories} date={date}></PostCategories>
         <RoundedButton href={uri}></RoundedButton>
       </div>
