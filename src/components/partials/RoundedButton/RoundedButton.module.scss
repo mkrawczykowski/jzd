@@ -20,12 +20,14 @@
 
         &:hover{
             box-shadow: 0px 0px 62px -9px rgba(173, 0, 255, 1);
+            border: 0.1rem solid global.$purple-light;
+            color: global.$purple-lightest;
 
             svg{
                 position: absolute;
                 top: 1.2rem;
                 right: 2.5rem;
-                stroke: global.$purple;
+                stroke: global.$purple-lightest;
                 transition: all 0.3s ease;
             }
         }
