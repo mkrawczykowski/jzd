@@ -12,23 +12,23 @@ const PostBox = ({id, title, excerpt, uri, date, categories}) => {
       <div className={styles.postBox}>
         <Row>
           <Col classes="col-lg-4">
-            {title && uri ? <a href={uri} className={[styles.postBox__title, styles.postBox__titleOption1].join(' ')}><h2>{title}</h2></a> : null}
+            {title && uri ? <a href={uri} className={[styles.postBox__title, styles.postBox__titleOption1].join(' ')}><h3>{title}</h3></a> : null}
             <PostCategories categories={categories} date={date}></PostCategories>
           </Col>
           <Col classes="col-lg-1"></Col>
           <Col classes="col-lg-3">
             <p className={styles.postBox__excerpt}>{excerpt}</p>
-            <RoundedButton href={uri} halign="right" topMargin="2"></RoundedButton>         
+            <RoundedButton href={uri} halign="right"></RoundedButton>         
           </Col>
         </Row>
       </div>
     )    
   } else {
     return(
-      <div className={styles.postBox}>
-        {title && uri ? <a href={uri} className={[styles.postBox__title, styles.postBox__titleOption2].join(' ')}><h2>{title}</h2></a> : null}
+      <div className={[styles.postBox, styles.postBoxPositionRelative].join(' ')}>
+        {title && uri ? <a href={uri} className={[styles.postBox__title, styles.postBox__titleOption2].join(' ')}><h3>{title}</h3></a> : null}
         <PostCategories categories={categories} date={date}></PostCategories>
-        <RoundedButton href={uri} halign="right" topMargin="2"></RoundedButton>
+        <RoundedButton href={uri} halign="right" position="absolute"></RoundedButton>
       </div>
     )
   }

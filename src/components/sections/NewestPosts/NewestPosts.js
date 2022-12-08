@@ -45,7 +45,7 @@ let twoPostsInRow = [];
           <Row>
             <Col classes="col-lg-1"></Col>
             <Col classes="col-lg-10">
-              <h3>{sectionsHeading}</h3>
+              <h2>{sectionsHeading}</h2>
             </Col>
             <Col classes="col-lg-1"></Col>
           </Row>
