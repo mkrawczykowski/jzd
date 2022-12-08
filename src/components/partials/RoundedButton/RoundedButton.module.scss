@@ -45,5 +45,9 @@
             background: none;
             color: global.$white;
         }
-    }    
+    }
+    
+    &--right{
+        justify-content: flex-end;
+    }
 }

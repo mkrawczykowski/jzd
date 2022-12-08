@@ -16,7 +16,7 @@ const PostBox = ({id, title, excerpt, uri, date, categories}) => {
           <Col classes="col-lg-1"></Col>
           <Col classes="col-lg-3">
             {excerpt ? <p className={styles.postBox__excerpt}>{excerpt}</p> : null}
-            <RoundedButton href={uri}></RoundedButton>         
+            <RoundedButton href={uri} halign="right"></RoundedButton>         
           </Col>
         </Row>
       </div>
