@@ -82,7 +82,7 @@ let twoPostsInRow = [];
                   
                   if (layout === 'withoutExcerpt') {
                     var a = allPostsIndex-skip;
-                    if (a % 2 == 0){
+                    if (a % 2 === 0){
                       
                       console.log('parzyste:');
                       console.log(allPostsIndex-skip);
@@ -112,7 +112,7 @@ let twoPostsInRow = [];
                     }
                     if (allPostsIndex-skip % 2 !== 0){
                       var b = allPostsIndex-skip;
-                      var tt = b % 2 == 0;
+                      var tt = b % 2 === 0;
                       console.log(tt);
                       console.log('nieparzyste:');
                       console.log(allPostsIndex-skip);
