@@ -13,10 +13,13 @@ const RoundedButton = ({href, type, label, halign}) => {
   return(
     // <div className={${styles.roundedButton} ${alignClasses}}>
     <div className={[styles.roundedButton, alignClasses].join(' ')}>
-
-      {console.log("[styles.roundedButton, alignClasses].join(' ')")}
-      {console.log([styles.roundedButton, alignClasses].join(' '))}
-      <a href={href} className={styles.roundedButton__button}>{label}</a>
+      <a href={href} className={styles.roundedButton__button}>
+        {label}
+        <svg width="20" height="18" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 9H19M19 9L11.125 1M19 9L11.125 17" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      
     </div>
   )
 }

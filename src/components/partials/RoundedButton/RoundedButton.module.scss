@@ -13,37 +13,32 @@
         padding: 1.1rem 6.1rem 0.9rem 3rem;
         display: inline-block;
 
-            &:after{
-                position: absolute;
-                right: 2.9rem;
-                top: 1.2rem;
-                left: auto;
-                bottom: auto;
-                background: url('../../../images/white-arrow-right.svg');
-                background-position: left center;
-                content: '';
-                display: inline-block;
-                width: 2rem;
-                height: 1.8rem;
-            }
+        &:after{
+            position: absolute;
+            background: none;
+        }
 
-            &:hover{
-                &:after{
-                    position: absolute;
-                    right: 2.4rem;
-                    top: 1.2rem;
-                    left: auto;
-                    bottom: auto;
-                    width: 2rem;
-                    height: 1.8rem;
-                    background-position: left center;
-                    background: url('../../../images/white-arrow-right.svg');
-                }
+        &:hover{
+            svg{
+                position: absolute;
+                top: 1.2rem;
+                right: 2.5rem;
+                stroke: global.$purple;
+                transition: all 0.3s ease;
             }
+        }
 
         &--onlyborder{
             background: none;
             color: global.$white;
+        }
+
+        svg{
+            position: absolute;
+            top: 1.2rem;
+            right: 3rem;
+            stroke: global.$white;
+            transition: all 0.3s ease;
         }
     }
     
