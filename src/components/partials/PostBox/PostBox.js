@@ -6,17 +6,19 @@ import * as styles from './PostBox.module.scss';
 
 const PostBox = ({id, title, excerpt, uri, date, categories}) => {
   if (excerpt){
+    console.log('styles');
+    console.log(styles);
     return(
       <div className={styles.postBox}>
         <Row>
           <Col classes="col-lg-4">
-            {title && uri ? <a href={uri} className={styles.postBox__title}><h2>{title}</h2></a> : null}
+            {title && uri ? <a href={uri} className={[styles.postBox__title, styles.postBox__titleOption1].join(' ')}><h2>{title}</h2></a> : null}
             <PostCategories categories={categories} date={date}></PostCategories>
           </Col>
           <Col classes="col-lg-1"></Col>
           <Col classes="col-lg-3">
-            {excerpt ? <p className={styles.postBox__excerpt}>{excerpt}</p> : null}
-            <RoundedButton href={uri} halign="right"></RoundedButton>         
+            <p className={styles.postBox__excerpt}>{excerpt}</p>
+            <RoundedButton href={uri} halign="right" topMargin="2"></RoundedButton>         
           </Col>
         </Row>
       </div>
@@ -24,9 +26,9 @@ const PostBox = ({id, title, excerpt, uri, date, categories}) => {
   } else {
     return(
       <div className={styles.postBox}>
-        {title && uri ? <a href={uri} className={styles.postBox__title}><h2>{title}</h2></a> : null}
+        {title && uri ? <a href={uri} className={[styles.postBox__title, styles.postBox__titleOption2].join(' ')}><h2>{title}</h2></a> : null}
         <PostCategories categories={categories} date={date}></PostCategories>
-        <RoundedButton href={uri}></RoundedButton>
+        <RoundedButton href={uri} halign="right" topMargin="2"></RoundedButton>
       </div>
     )
   }

@@ -49,4 +49,14 @@
     &--right{
         justify-content: flex-end;
     }
+
+    &--top-margin-1{
+        display: inline-block;
+        margin: 0;
+    }
+
+    &--top-margin-2{
+        display: inline-block;
+        margin: 4.1rem 0 0 0;
+    }
 }

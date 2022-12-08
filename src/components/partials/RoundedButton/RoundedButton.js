@@ -1,18 +1,29 @@
 import React from 'react';
 import * as styles from './RoundedButton.module.scss';
 
-const RoundedButton = ({href, type, label, halign}) => {
-  let alignClasses = '';
-  console.log('align');
-  console.log(halign);
+const RoundedButton = ({href, type, label, halign, topMargin}) => {
+  let alignClass = '';
+  let topMarginClass = '';
+  
   switch(halign){
     case 'right':
-      alignClasses = styles.roundedButtonRight;
+      alignClass = styles.roundedButtonRight;
     break;
   }
+
+  switch(topMargin){
+    case '1':
+      topMarginClass = styles.roundedButtonTopMargin1;
+    break;
+    case '2':
+      topMarginClass = styles.roundedButtonTopMargin2;
+    break;
+    default:
+      topMarginClass = styles.roundedButtonTopMargin1;
+  }
+
   return(
-    // <div className={${styles.roundedButton} ${alignClasses}}>
-    <div className={[styles.roundedButton, alignClasses].join(' ')}>
+    <div className={[styles.roundedButton, alignClass, topMarginClass].join(' ')}>
       <a href={href} className={styles.roundedButton__button}>
         {label}
         <svg width="20" height="18" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
