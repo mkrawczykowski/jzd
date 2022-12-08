@@ -3,7 +3,7 @@ import Footer from '../Footer/Footer.js';
 import MainMenu from '../MainMenu/MainMenu';
 
 
-const Layout = ( {children} ) =>{
+const Layout = ({children}) =>{
     return (
         <>
             <header>
@@ -11,7 +11,7 @@ const Layout = ( {children} ) =>{
                 <MainMenu></MainMenu>
             </header>
             <main>
-                { children }
+                {children}
             </main>
             <Footer></Footer>
         </>
