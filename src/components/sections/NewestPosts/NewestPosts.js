@@ -64,7 +64,6 @@ let twoPostsInRow = [];
                 if (allPostsIndex + 1 > skip && allPostsIndex + 1 <= newestPostsNumber + skip){
 
                   let excerpt = '';
-                  let colClasses = '';
 
                   if (layout === 'withExcerpt') {
                     excerpt = post.ACFpostExcerpt.postExcerpt;
@@ -82,11 +81,8 @@ let twoPostsInRow = [];
                   
                   if (layout === 'withoutExcerpt') {
                     var a = allPostsIndex-skip;
-                    if (a % 2 === 0){
-                      
-                      console.log('parzyste:');
-                      console.log(allPostsIndex-skip);
-                      twoPostsInRow = new Array()
+
+                    if (a % 2 == 0){
                       
                       twoPostsInRow.push(
                         {
@@ -97,25 +93,9 @@ let twoPostsInRow = [];
                           date: date,
                           categories: categories
                         }
-                        
-                        // <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
-                      )
-                      console.log(twoPostsInRow);
-                      return(
-                        <>
-                        {/* <h2>11: {allPostsIndex-skip}</h2>
-                          <PostBox key={id} id={id} title={title} uri={uri} date={date} categories={categories}/>
-                          <pre>{allPostsIndex-skip} {JSON.stringify(twoPostsInRow, null, 2)}</pre>
-                          <p>===================</p> */}
-                        </>
                       )
                     }
                     if (allPostsIndex-skip % 2 !== 0){
-                      var b = allPostsIndex-skip;
-                      var tt = b % 2 === 0;
-                      console.log(tt);
-                      console.log('nieparzyste:');
-                      console.log(allPostsIndex-skip);
                       twoPostsInRow.push(
                         {
                           index: allPostsIndex,
@@ -126,65 +106,45 @@ let twoPostsInRow = [];
                           categories: categories
                         }
                       )
-                      console.log(twoPostsInRow);
                     
                       return(
                         <>
-                          {/* <pre>{allPostsIndex-skip}: {JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
                           <Row>
                             <Col classes="col col-xl-2"></Col>
-                            { twoPostsInRow.map((postInRow) => {
-                              console.log(`uri: ${postInRow.uri}`)
-                              return(
-                                <Col classes="col col-xl-4">
-                                  <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
-                                  {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
-                                </Col>
-                              )
+                            {twoPostsInRow.map((postInRow,twoPostsInRowIndex) => {
+
+                              if (twoPostsInRowIndex % 2 === 0){
+                                console.log(`1111: ${twoPostsInRowIndex}`)
+                                console.log(postInRow.title)
+                                return(
+                                  <>
+                                    <Col classes="col col-xl-3">
+                                      <PostBox key={postInRow.id} position='relative' id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
+                                    </Col>
+                                    <Col classes="col col-xl-1"></Col>
+                                  </>
+                                )
+                              }
+                              if (twoPostsInRowIndex % 2 !== 0){
+                                console.log(`2222: ${twoPostsInRowIndex}`)
+                                console.log(postInRow.title)
+                                twoPostsInRow = new Array();
+                                return(
+                                  <>
+                                    <Col classes="col col-xl-1"></Col>
+                                    <Col classes="col col-xl-3">
+                                      <PostBox key={postInRow.id} position='relative' id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
+                                    </Col>
+                                  </>
+                                )
+                              }
                             })
                             }
                             <Col classes="col col-xl-2"></Col>
                           </Row>
                         </>
                       )
-                      
-                      
                     }
-                    
-
-                    // if (allPostsIndex % 2 !== 0 && allPostsIndex !== 0){
-                    //   return(
-                    //     <Row>
-                    //       <Col classes="col-lg-2"></Col>
-                    //       {
-                    //         twoPostsInRow.map((postInRow, indexTwoPostsInRow) => {
-                    //           return(
-                    //             { postInRow }
-                    //           )
-                    //         })
-                    //       }
-                    //       <Col classes="col-lg-2"></Col>
-                    //     </Row>
-                    //   )
-                    // }
-                      // if (allPostsIndex % 2){
-                      //   return(
-                      //     <>
-                      //       <Col classes="col-lg-2"></Col>
-                      //       <Col classes='col-lg-4'>   
-                      //         <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
-                      //       </Col> 
-                      //     </>
-                      //   )
-                      // } else {
-                        // return(
-                        //   <>
-                        //     <Col classes='col-lg-4'>   
-                        //       <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
-                        //     </Col>
-                        //     <Col classes="col-lg-2"></Col>
-                        //   </>
-                        // )
                   }
                 }
               })
