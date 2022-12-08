@@ -14,6 +14,7 @@ export const query = graphql`
             __typename
             ...NewestpostsFragment
             ...WysiwygeditorFragment
+            ...Newslettersignup
           }
         }
       }
@@ -42,7 +43,7 @@ export const query = graphql`
   }
 `;
 
-const PageTemplate = ( { data, location } ) => {
+const PageTemplate = ({data, location}) => {
   const page = data.wpgraphql.page;
   const acfOptions = data.wpgraphql.acfOptions.general;
   const flexSections = page.ACFcontentSections.sections;
@@ -50,16 +51,16 @@ const PageTemplate = ( { data, location } ) => {
   return(
     <Layout>
       {
-        location.pathname === '/' ? <HPSlider acfOptions={ acfOptions }></HPSlider> : ''
+        location.pathname === '/' ? <HPSlider acfOptions={acfOptions}></HPSlider> : ''
       }
       
-      { 
+      {
         flexSections.map((flexibleSection, index) => {
           const {__typename, ...sectionData} = flexibleSection;
           return(
             <FlexibleSections key={index} typename={__typename} sectionData={{...sectionData}} />
           )
-        }) 
+        })
       }
     </Layout>
   )
