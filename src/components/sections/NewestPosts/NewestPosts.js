@@ -133,14 +133,30 @@ let twoPostsInRow = [];
                           {/* <pre>{allPostsIndex-skip}: {JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
                           <Row>
                             <Col classes="col col-xl-2"></Col>
-                            { twoPostsInRow.map((postInRow) => {
-                              console.log(`uri: ${postInRow.uri}`)
-                              return(
-                                <Col classes="col col-xl-4">
-                                  <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
-                                  {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
-                                </Col>
-                              )
+                            { twoPostsInRow.map((postInRow, twoPostsInRowIndex) => {
+                              if (twoPostsInRowIndex % 2 === 0){
+                                return(
+                                  <>
+                                    <Col classes="col col-xl-3">
+                                      <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
+                                      {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
+                                    </Col>
+                                    <Col classes="col col-xl-1"></Col>
+                                  </>
+                                ) 
+                              }
+                              if (twoPostsInRowIndex % 2 !== 0){
+                                return(
+                                  <>
+                                    <Col classes="col col-xl-1"></Col>
+                                    <Col classes="col col-xl-3">
+                                      <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
+                                      {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
+                                    </Col>
+                                  </>
+                                ) 
+                              }
+                              
                             })
                             }
                             <Col classes="col col-xl-2"></Col>
