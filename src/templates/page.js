@@ -14,7 +14,7 @@ export const query = graphql`
             __typename
             ...NewestpostsFragment
             ...WysiwygeditorFragment
-            ...Newslettersignup
+            ...NewslettersignupFragment
           }
         }
       }
