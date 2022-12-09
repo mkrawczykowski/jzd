@@ -20,6 +20,7 @@
     "gatsby-source-graphql": "^4.24.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-lines-ellipsis": "^0.15.3",
     "sass": "^1.55.0",
     "swiper": "^8.4.4"
   },
