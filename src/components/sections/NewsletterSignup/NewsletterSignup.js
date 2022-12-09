@@ -1,13 +1,18 @@
 import React from 'react';
+import {graphql} from 'gatsby';
 import {Container, Col, Row} from '../../structure/Grid/Grid';
 
-const NewestPosts = ({data}) => {
+const NewsletterSignup = ({data}) => {
     return(
         <section>
             <Container>
                 <Row>
                     <Col classes="col col-xl-2"></Col>
-                    <Col classes="col col-xl-3"></Col>
+                    <Col classes="col col-xl-3">
+                        <label for="email">
+                            <input type="text" id="email" name="email"></input>
+                        </label>
+                    </Col>
                     <Col classes="col col-xl-1"></Col>
                     <Col classes="col col-xl-4"></Col>
                     <Col classes="col col-xl-2"></Col>
@@ -17,10 +22,10 @@ const NewestPosts = ({data}) => {
     )
 }
 
-export default NewestPosts;
+export default NewsletterSignup;
 
 export const query = graphql`
-    fragment NewsletterSignup on WPGraphQL_Page_Acfcontentsections_Sections_Newslettersignup{
+    fragment NewslettersignupFragment on WPGraphQL_Page_Acfcontentsections_Sections_Newslettersignup{
         privacyPolicyText
         text
         sectionsheading
