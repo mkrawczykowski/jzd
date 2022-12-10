@@ -8,7 +8,7 @@ const NewestPosts = ({data}) => {
   const newestPostsNumber = data.newestPostsNumber;
   const skip = data.skip;
   const layout = data.layout;
-  const sectionsHeading = data.sectionsheading
+  const sectionsHeading = data.sectionsHeading
 
   const postsQuery = useStaticQuery(graphql`
   query{
@@ -214,7 +214,7 @@ export default NewestPosts
 
 export const query = graphql`
   fragment NewestpostsFragment on WPGraphQL_Page_Acfcontentsections_Sections_Newestposts{
-    sectionsheading
+    sectionsHeading
     newestPostsNumber
     skip
     layout

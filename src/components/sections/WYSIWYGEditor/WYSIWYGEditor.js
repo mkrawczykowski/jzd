@@ -3,12 +3,14 @@ import {graphql} from "gatsby";
 import {Container, Row, Col} from '../../structure/Grid/Grid';
 
 const WYSIWYGEditor = ({data}) => {
+  const wysiwygEditor = data.wysiwygEditor;
+
   return(
     <section>
       <Container>
         <Row>
           <Col classes="col col-xl-10">
-            <div dangerouslySetInnerHTML={{__html: data.wysiwygEditor}}></div>
+            <div dangerouslySetInnerHTML={{__html: wysiwygEditor}}></div>
           </Col>
         </Row>
       </Container>
