@@ -1,5 +1,79 @@
 @use '../../../styles/global';
 
-.main-menu{
+.main-nav{
   background-color: global.$darkgray;
+  display: flex;
+  justify-content: space-between;
+  padding: 4.3rem 0;
+
+  padding: 7rem 0;
+
+  &__logo{
+    font-family: global.$font-main;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-transform: lowercase;  
+  }
+
+  .main-menu{
+    display: flex;
+    justify-content: space-between;
+
+    li{
+      &:first-of-type{
+        padding: 0 2.5rem 0 0;
+      }
+
+      &:not(:first-of-type), &:not(:last-of-type){
+        padding: 0 2.5rem;
+      }
+      
+      &:last-of-type{
+        padding: 0 0 0 2.5rem;
+      }
+
+      &.main-menu__item{
+        font-family: global.$font-main;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        text-transform: lowercase;
+
+        .main-menu__link{
+          @include global.media-between(lg, xl){
+            border: 3px solid red;
+          }
+
+          &:after{
+            width: 0%;
+          }
+        }
+      }
+    }
+  }
+  &__hamburger{
+    position: relative;
+    width: 1.75rem;
+
+    span{
+      position: absolute;
+      background-color: global.$white;
+      display: inline-block;
+      height: 3px;
+      width: 1.75rem;
+
+      &:first-of-type{
+        top: 0;
+      }
+      &:nth-of-type(2){
+        top: 2rem;
+      }
+      &:last-of-type{
+        bottom: 0;
+      }
+    }
+  }
 }
