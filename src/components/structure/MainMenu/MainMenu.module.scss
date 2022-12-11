@@ -4,9 +4,12 @@
   background-color: global.$darkgray;
   display: flex;
   justify-content: space-between;
-  padding: 4.3rem 0;
+  padding: 4rem 0;
+  position: relative;
 
-  padding: 7rem 0;
+  @include global.media-up(lg){
+    padding: 7rem 0;  
+  }
 
   &__logo{
     font-family: global.$font-main;
@@ -20,6 +23,12 @@
   .main-menu{
     display: flex;
     justify-content: space-between;
+    position: absolute;
+    flex-direction: column;
+    
+    @include global.media-down(lg){
+      
+    }
 
     li{
       &:first-of-type{
@@ -34,6 +43,10 @@
         padding: 0 0 0 2.5rem;
       }
 
+      @include global.media-down(lg){
+
+      }
+
       &.main-menu__item{
         font-family: global.$font-main;
         font-style: normal;
@@ -43,10 +56,6 @@
         text-transform: lowercase;
 
         .main-menu__link{
-          @include global.media-between(lg, xl){
-            border: 3px solid red;
-          }
-
           &:after{
             width: 0%;
           }
