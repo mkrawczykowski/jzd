@@ -6,27 +6,26 @@ $purple: #AD00FF;
 $purple-light: #c150f7;
 $purple-lightest: #f8e9ff;
 
-// Grid settings
-$containerHorizontalPadding: 3; //rem units
-$container-width: 137.6; //rem units
-$gap: 1.6rem;
-
-
 $font-main: 'Raleway', sans-serif;
 $font-secondary: 'Lato', sans-serif;
 
 $breakpoints: ("xs": 0, "sm": 576, "md": 768, "lg": 992, "xl": 1200, "2xl": 1400, "3xl": 1800);
 
-@mixin media-below($breakpoint){
+// Grid settings
+$containerHorizontalPadding: 3; //rem units
+$container-width: 137.6; //rem units
+$gap: 1.6rem;
+
+@mixin media-down($breakpoint){
     $pixelsBreakpoint: map-get($breakpoints, $breakpoint) - 1px;
     @media screen and (max-width: $pixelsBreakpoint){
         @content;
     }
 }
 
-@mixin media-above($breakpoint){
+@mixin media-up($breakpoint){
     $pixelsBreakpoint: map-get($breakpoints, $breakpoint) + 0px;
-    @media screen and (max-width: $pixelsBreakpoint){
+    @media screen and (min-width: $pixelsBreakpoint){
         @content;
     }
 }
