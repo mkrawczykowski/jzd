@@ -14,7 +14,7 @@ const HPSlider = ({acfOptions}) => {
         {
           HPSlides.map(HPSlide => {
             const slideCategories = HPSlide.slide.categories.nodes;
-            const id = HPSlide.slide.title;
+            const id = HPSlide.slide.id;
             const title = HPSlide.slide.title;
             const date = HPSlide.slide.date;
             const uri = HPSlide.slide.uri;
