@@ -1,14 +1,11 @@
 import React from 'react';
-import Footer from '../Footer/Footer.js';
-import MainMenu from '../MainMenu/MainMenu';
-
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 
 const Layout = ({children}) =>{
     return (
         <>
-            <header>
-                <MainMenu></MainMenu>
-            </header>
+            <Header></Header>
             <main>
                 {children}
             </main>
