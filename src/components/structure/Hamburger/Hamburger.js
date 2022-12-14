@@ -3,7 +3,7 @@ import * as styles from './Hamburger.module.scss';
 
 const Hamburger = () => {
     return(
-        <div className={styles.mainNav__hamburger}>
+        <div className={styles.hamburger}>
             <span></span>
             <span></span>
             <span></span>

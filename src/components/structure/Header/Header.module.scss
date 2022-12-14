@@ -1,3 +1,17 @@
+@use '../../../styles/global/' as global;
+
 .header{
     position: relative;
+
+    .main-nav{
+        background-color: global.$darkgray;
+        display: flex;
+        justify-content: space-between;
+        padding: 4rem 0;
+        height: 10.9rem;
+      
+        @include global.media-up(lg){
+          padding: 7rem 0;  
+        }
+    }
 }

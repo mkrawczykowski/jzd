@@ -1,16 +1,5 @@
 @use '../../../styles/global';
 
-.main-nav{
-  background-color: global.$darkgray;
-  display: flex;
-  justify-content: space-between;
-  padding: 4rem 0;
-  height: 10.9rem;
-
-  @include global.media-up(lg){
-    padding: 7rem 0;  
-  }
-
   .main-menu{
     display: flex;
     justify-content: space-between;
@@ -59,12 +48,10 @@
         }
       }
     }
-  }
-
-  &.active{
-    .main-menu{
+    &.active{
       left: 0;
-      transition: all 0.4s ease;      
+      transition: all 0.4s ease;
     }
   }
-}
+
+  
