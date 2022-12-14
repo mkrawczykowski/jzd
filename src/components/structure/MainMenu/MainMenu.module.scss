@@ -11,17 +11,6 @@
     padding: 7rem 0;  
   }
 
-  &__logo{
-    font-family: global.$font-main;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.5rem;
-    line-height: 1.8rem;
-    text-transform: lowercase;
-    position: relative;
-    z-index: 20;
-  }
-
   .main-menu{
     display: flex;
     justify-content: space-between;
