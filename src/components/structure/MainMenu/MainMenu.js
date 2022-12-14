@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useStaticQuery, graphql} from 'gatsby';
 import {Container, Row, Col} from '../Grid/Grid';
+import Logo from '../Logo/Logo';
 import * as styles from './MainMenu.module.scss';
 
 const Mainmenu = () =>{
@@ -33,7 +34,7 @@ const Mainmenu = () =>{
         <Col classes="col col-xs-12 col-lg-1"></Col>
         <Col classes="col col-xs-12 col-lg-10">
           <nav className={[styles.mainNav, styles[navStateClass]].join(' ')}>
-            <h1 className={styles.mainNav__logo}>jakzostalemdevem.pl</h1>
+            <Logo></Logo>
             <ul className={styles.mainMenu}>
               {mainmenuItems.map(link => {
                 return(
