@@ -4,11 +4,9 @@ import {Container, Row, Col} from '../Grid/Grid';
 import * as styles from './MainMenu.module.scss';
 
 const Mainmenu = () =>{
-  const [menuStateClass, setMenuStateClass] = useState('');
-  const changingMenuStateClass = () => {
-    console.log('changing state!');
-    console.log(menuStateClass);
-    menuStateClass.length > 0 ? setMenuStateClass('') : setMenuStateClass('active');
+  const [navStateClass, setNavStateClass] = useState('');
+  const changingNavStateClass = () => {
+    navStateClass.length > 0 ? setNavStateClass('') : setNavStateClass('active');
   }
 
   const mainMenuQuery = useStaticQuery(graphql`
@@ -34,9 +32,9 @@ const Mainmenu = () =>{
       <Row>
         <Col classes="col col-xs-12 col-lg-1"></Col>
         <Col classes="col col-xs-12 col-lg-10">
-          <nav className={styles.mainNav}>
+          <nav className={[styles.mainNav, styles[navStateClass]].join(' ')}>
             <h1 className={styles.mainNav__logo}>jakzostalemdevem.pl</h1>
-            <ul className={[styles.mainMenu, styles[menuStateClass]].join(' ')}>
+            <ul className={styles.mainMenu}>
               {mainmenuItems.map(link => {
                 return(
                   <li key={link.id} className={styles.mainMenu__item}><a href={link.uri} className={styles.mainMenu__link}>{link.label}</a></li>
@@ -45,7 +43,7 @@ const Mainmenu = () =>{
               }
             </ul>
           </nav>
-          <div className={styles.mainNav__hamburger} onClick={changingMenuStateClass}>
+          <div className={styles.mainNav__hamburger} onClick={changingNavStateClass}>
             <span></span>
             <span></span>
             <span></span>
