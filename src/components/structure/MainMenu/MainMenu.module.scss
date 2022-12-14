@@ -31,9 +31,6 @@
       background: none;
     }
 
-    // 
-    
-
     li{
       &:first-of-type{
         padding: 0 2.5rem 0 0;
@@ -69,29 +66,5 @@
       left: 0;
       transition: all 0.4s ease;      
     }
-
-    .main-menu__hamburger{
-      span{
-        transition: all 0.4s ease; 
-
-        &:first-of-type{
-          transform: rotate(0);
-          top: 0.9rem;
-          left: -0.4rem;
-          width: 2.9rem;
-        }
-        &:nth-of-type(2){
-          top: 2rem;
-          opacity: 1;
-        }
-        &:last-of-type{
-          transform: rotate(0);
-          top: 0.9rem;
-          width: 2.9rem;
-          left: -0.4rem;
-        }
-      }
-    }
-
-    }
+  }
 }
