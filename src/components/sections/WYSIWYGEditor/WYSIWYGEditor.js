@@ -25,3 +25,9 @@ export const query = graphql`
     wysiwygEditor
   }
 `;
+
+export const queryPost = graphql`
+  fragment WysiwygeditorFragmentPost on WPGraphQL_Post_Acfcontentsections_Sections_Wysiwygeditor{
+    wysiwygEditor
+  }
+`;
