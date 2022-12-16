@@ -38,11 +38,3 @@ export const query = graphql`
         sectionsHeading
     }
 `
-
-export const queryPost = graphql`
-    fragment NewslettersignupFragmentPost on WPGraphQL_Post_Acfcontentsections_Sections_Newslettersignup{
-        privacyPolicyText
-        text
-        sectionsHeading
-    }
-`
