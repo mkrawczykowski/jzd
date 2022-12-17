@@ -64,7 +64,6 @@ let twoPostsInRow = [];
                 if (allPostsIndex + 1 > skip && allPostsIndex + 1 <= newestPostsNumber + skip){
 
                   let excerpt = '';
-                  let colClasses = '';
 
                   if (layout === 'withExcerpt') {
                     excerpt = post.ACFpostExcerpt.postExcerpt;
@@ -72,7 +71,7 @@ let twoPostsInRow = [];
                     return(
                       <Row>
                         <Col classes="col-lg-2"></Col>
-                        <Col classes='col-lg-8'>
+                        <Col classes="col-lg-8">
                           <PostBox key={id} id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
                         </Col>
                         <Col classes="col-lg-2"></Col>
@@ -83,9 +82,6 @@ let twoPostsInRow = [];
                   if (layout === 'withoutExcerpt') {
                     var a = allPostsIndex-skip;
                     if (a % 2 === 0){
-                      
-                      console.log('parzyste:');
-                      console.log(allPostsIndex-skip);
                       twoPostsInRow = new Array()
                       
                       twoPostsInRow.push(
@@ -111,11 +107,6 @@ let twoPostsInRow = [];
                       )
                     }
                     if (allPostsIndex-skip % 2 !== 0){
-                      var b = allPostsIndex-skip;
-                      var tt = b % 2 === 0;
-                      console.log(tt);
-                      console.log('nieparzyste:');
-                      console.log(allPostsIndex-skip);
                       twoPostsInRow.push(
                         {
                           index: allPostsIndex,
@@ -129,8 +120,6 @@ let twoPostsInRow = [];
                       console.log(twoPostsInRow);
                     
                       return(
-                        <>
-                          {/* <pre>{allPostsIndex-skip}: {JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
                           <Row>
                             <Col classes="col col-xl-2"></Col>
                             { twoPostsInRow.map((postInRow, twoPostsInRowIndex) => {
@@ -161,7 +150,6 @@ let twoPostsInRow = [];
                             }
                             <Col classes="col col-xl-2"></Col>
                           </Row>
-                        </>
                       )
                       
                       

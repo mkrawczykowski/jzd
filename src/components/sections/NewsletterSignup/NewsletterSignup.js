@@ -8,7 +8,7 @@ const NewsletterSignup = ({data}) => {
     console.log(data);
     const sectionsHeading = data.sectionsHeading;
     const text = data.text;
-    const privacyPolicyText = data.privacyPolicyText;
+    // const privacyPolicyText = data.privacyPolicyText;
     return(
         <section>
             <Container>
