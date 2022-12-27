@@ -21,7 +21,7 @@ const Header = () => {
                     <Col classes="col col-xs-12 col-lg-10">
                         <nav className={[styles.mainNav, styles[headerStateClass]].join(' ')}>
                             <Logo></Logo>
-                            <MainMenu></MainMenu>
+                            <MainMenu active={headerStateClass}></MainMenu>
                         </nav>
                         <Hamburger onClick={changingHeaderStateClass} active={headerStateClass}></Hamburger>
                     </Col>
