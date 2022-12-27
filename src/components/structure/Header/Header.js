@@ -23,7 +23,7 @@ const Header = () => {
                             <Logo></Logo>
                             <MainMenu></MainMenu>
                         </nav>
-                        <Hamburger clickHandler={changingHeaderStateClass} active={headerStateClass}></Hamburger>
+                        <Hamburger onClick={changingHeaderStateClass} active={headerStateClass}></Hamburger>
                     </Col>
                     <Col classes="col col-xs-12 col-lg-1"></Col>
                 </Row>

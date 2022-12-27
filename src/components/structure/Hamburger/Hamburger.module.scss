@@ -34,4 +34,10 @@
         left: -0.4rem;
       }
     }
+
+    &.active{
+      span{
+        background-color: global.$white;
+      }
+    }
 }
