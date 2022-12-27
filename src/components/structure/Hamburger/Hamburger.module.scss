@@ -8,36 +8,61 @@
     height: 2.1rem;
     z-index: 20;
 
+    @include global.media-up(lg){
+      display: none;
+    }
+
     span{
       position: absolute;
-      background-color: global.$black;
+      background-color: global.$white;
       display: inline-block;
       height: 3px;
       width: 1.75rem;
       border-radius: 20px;
+      transition: all 0.3s ease;
 
       &:first-of-type{
-        transform: rotate(45deg);
-        top: 0.9rem;
-        left: -0.4rem;
+        transform: rotate(0);
+        top: 0;
+        left: 0;
         width: 2.9rem;
       }
       &:nth-of-type(2){
-        top: 2rem;
-        opacity: 0;
+        top: 0.9rem;
+        width: 2.9rem;
+        opacity: 1;
 
       }
       &:last-of-type{
-        transform: rotate(-45deg);
-        top: 0.9rem;
+        transform: rotate(0);
+        top: 1.8rem;
         width: 2.9rem;
-        left: -0.4rem;
+        left: 0;
       }
     }
 
     &.active{
       span{
         background-color: global.$white;
+        transition: all 0.3s ease;
+
+        &:first-of-type{
+          transform: rotate(45deg);
+          top: 0.9rem;
+          left: -0.4rem;
+          width: 2.9rem;
+        }
+        &:nth-of-type(2){
+          top: 0.9rem;
+          opacity: 0;
+  
+        }
+        &:last-of-type{
+          transform: rotate(-45deg);
+          top: 0.9rem;
+          width: 2.9rem;
+          left: -0.4rem;
+        }
       }
     }
 }
