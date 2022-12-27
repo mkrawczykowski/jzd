@@ -14,6 +14,7 @@ $colWidth:  (round(math.div(variables.$container-width, 12) * 10) / 10) * 1rem;
     margin-right: calc(variables.$gap / 2 * -1);
     justify-content: flex-start;
     align-items: flex-start;
+    flex-wrap: wrap;
 
     .col{
       padding-right: 1rem;
