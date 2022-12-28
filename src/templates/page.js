@@ -4,7 +4,7 @@ import Layout from '../components/structure/Layout/Layout';
 import FlexibleSections from '../components/sections/_FlexibleSections/FlexibleSections';
 import HPSlider from '../components/structure/HPSlider/HPSlider';
 
-export const query = graphql`  
+export const query = graphql`
   query($id: ID!){
     wpgraphql{
       page(id: $id){
@@ -12,9 +12,9 @@ export const query = graphql`
         ACFcontentSections{
           sections{
             __typename
-            ...NewestpostsFragment
-            ...WysiwygeditorFragment
-            ...NewslettersignupFragment
+            ...NewestpostsFragmentPage
+            ...WysiwygeditorFragmentPage
+            ...NewslettersignupFragmentPage
           }
         }
       }

@@ -31,8 +31,15 @@ const NewsletterSignup = ({data}) => {
 
 export default NewsletterSignup;
 
-export const query = graphql`
-    fragment NewslettersignupFragment on WPGraphQL_Page_Acfcontentsections_Sections_Newslettersignup{
+export const pageQuery = graphql`
+    fragment NewslettersignupFragmentPage on WPGraphQL_Page_Acfcontentsections_Sections_Newslettersignup{
+        privacyPolicyText
+        text
+        sectionsHeading
+    }
+`
+export const postQuery = graphql`
+    fragment NewslettersignupFragmentPost on WPGraphQL_Post_Acfcontentsections_Sections_Newslettersignup{
         privacyPolicyText
         text
         sectionsHeading

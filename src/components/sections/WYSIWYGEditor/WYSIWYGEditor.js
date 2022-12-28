@@ -20,8 +20,13 @@ const WYSIWYGEditor = ({data}) => {
 
 export default WYSIWYGEditor;
 
-export const query = graphql`
-  fragment WysiwygeditorFragment on WPGraphQL_Page_Acfcontentsections_Sections_Wysiwygeditor{
+export const pageQuery = graphql`
+  fragment WysiwygeditorFragmentPage on WPGraphQL_Page_Acfcontentsections_Sections_Wysiwygeditor{
+    wysiwygEditor
+  }
+`;
+export const postQuery = graphql`
+  fragment WysiwygeditorFragmentPost on WPGraphQL_Post_Acfcontentsections_Sections_Wysiwygeditor{
     wysiwygEditor
   }
 `;

@@ -200,8 +200,16 @@ let twoPostsInRow = [];
 
 export default NewestPosts
 
-export const query = graphql`
-  fragment NewestpostsFragment on WPGraphQL_Page_Acfcontentsections_Sections_Newestposts{
+export const postQuery = graphql`
+  fragment NewestpostsFragmentPost on WPGraphQL_Post_Acfcontentsections_Sections_Newestposts{
+    sectionsHeading
+    newestPostsNumber
+    skip
+    layout
+  }
+`;
+export const pageQuery = graphql`
+  fragment NewestpostsFragmentPage on WPGraphQL_Page_Acfcontentsections_Sections_Newestposts{
     sectionsHeading
     newestPostsNumber
     skip
