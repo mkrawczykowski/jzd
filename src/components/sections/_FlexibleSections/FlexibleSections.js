@@ -8,12 +8,14 @@ const FlexibleSections = ({typename, sectionData}) => {
   // console.log(sectionData);
   // <pre>{JSON.stringify(sectionData, null, 2)}</pre>
 
-  switch(typename){
-    case 'WPGraphQL_Page_Acfcontentsections_Sections_Wysiwygeditor':
+  let sectionName = typename.substring(typename.lastIndexOf('_')+1,typename.length);
+
+  switch(sectionName){
+    case 'Wysiwygeditor':
       return <WYSIWYGEditor data={sectionData} />
-    case 'WPGraphQL_Page_Acfcontentsections_Sections_Newestposts':
+    case 'Newestposts':
       return <NewestPosts data={sectionData} />
-    case 'WPGraphQL_Page_Acfcontentsections_Sections_Newslettersignup':
+    case 'Newslettersignup':
       return <NewsletterSignup data={sectionData} />
   }
 }

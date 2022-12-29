@@ -40,7 +40,6 @@ const PostTemplate = ({data}) =>{
       }
     </Layout>
   )
-
 }
 
 export default PostTemplate;
