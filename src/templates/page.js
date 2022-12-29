@@ -57,8 +57,7 @@ const PageTemplate = ({data, location}) => {
       {
         flexSections.map((flexibleSection, index) => {
           const {__typename, ...sectionData} = flexibleSection;
-          console.log('dupa');
-          console.log(__typename);
+          
           return(
             <FlexibleSections key={index} typename={__typename} sectionData={sectionData} />
           )

@@ -5,10 +5,8 @@ import FormGDPR from '../../partials/FormGDPR/FormGDPR';
 import * as styles from './newsletterSignup.module.scss';
 
 const NewsletterSignup = ({data}) => {
-    console.log(data);
     const sectionsHeading = data.sectionsHeading;
     const text = data.text;
-    // const privacyPolicyText = data.privacyPolicyText;
     return(
         <section>
             <Container>

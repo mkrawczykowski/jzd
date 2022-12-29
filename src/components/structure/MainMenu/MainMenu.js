@@ -21,8 +21,6 @@ const Mainmenu = ({active}) =>{
   `)
 
   const mainmenuItems = mainMenuQuery.wpgraphql.menu.menuItems.nodes;
-    console.log('MENU styles[active]');
-    console.log(styles[active]);
   return(
     <ul className={[styles.mainMenu, styles[active]].join(' ')}>
       {mainmenuItems.map(link => {

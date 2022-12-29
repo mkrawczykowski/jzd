@@ -4,10 +4,6 @@ import WYSIWYGEditor from '../WYSIWYGEditor/WYSIWYGEditor'
 import NewsletterSignup from '../NewsletterSignup/NewsletterSignup'
 
 const FlexibleSections = ({typename, sectionData}) => {
-  // console.log('sectionData: ');
-  // console.log(sectionData);
-  // <pre>{JSON.stringify(sectionData, null, 2)}</pre>
-
   let sectionName = typename.substring(typename.lastIndexOf('_')+1,typename.length);
 
   switch(sectionName){

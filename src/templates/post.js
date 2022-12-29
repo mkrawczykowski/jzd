@@ -30,8 +30,6 @@ const PostTemplate = ({data}) =>{
       {
         flexSections.map((flexSection, index) => {
           const {__typename, ...sectionData} = flexSection;
-          console.log('dupa');
-          console.log(__typename);
 
           return(
             <FlexibleSections key={index} typename={__typename} sectionData={sectionData} />  

@@ -93,16 +93,9 @@ let twoPostsInRow = [];
                           date: date,
                           categories: categories
                         }
-                        
-                        // <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
                       )
-                      console.log(twoPostsInRow);
                       return(
                         <>
-                        {/* <h2>11: {allPostsIndex-skip}</h2>
-                          <PostBox key={id} id={id} title={title} uri={uri} date={date} categories={categories}/>
-                          <pre>{allPostsIndex-skip} {JSON.stringify(twoPostsInRow, null, 2)}</pre>
-                          <p>===================</p> */}
                         </>
                       )
                     }
@@ -117,8 +110,6 @@ let twoPostsInRow = [];
                           categories: categories
                         }
                       )
-                      console.log(twoPostsInRow);
-                    
                       return(
                           <Row>
                             <Col classes="col col-xl-2"></Col>
@@ -128,7 +119,6 @@ let twoPostsInRow = [];
                                   <>
                                     <Col classes="col col-xl-3">
                                       <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
-                                      {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
                                     </Col>
                                     <Col classes="col col-xl-1"></Col>
                                   </>
@@ -140,7 +130,6 @@ let twoPostsInRow = [];
                                     <Col classes="col col-xl-1"></Col>
                                     <Col classes="col col-xl-3">
                                       <PostBox key={postInRow.id} id={postInRow.id} title={postInRow.title} uri={postInRow.uri} date={postInRow.date} categories={postInRow.categories}/>
-                                      {/* <pre>co to?{JSON.stringify(twoPostsInRow, null, 2)}</pre> */}
                                     </Col>
                                   </>
                                 ) 
@@ -151,44 +140,7 @@ let twoPostsInRow = [];
                             <Col classes="col col-xl-2"></Col>
                           </Row>
                       )
-                      
-                      
                     }
-                    
-
-                    // if (allPostsIndex % 2 !== 0 && allPostsIndex !== 0){
-                    //   return(
-                    //     <Row>
-                    //       <Col classes="col-lg-2"></Col>
-                    //       {
-                    //         twoPostsInRow.map((postInRow, indexTwoPostsInRow) => {
-                    //           return(
-                    //             { postInRow }
-                    //           )
-                    //         })
-                    //       }
-                    //       <Col classes="col-lg-2"></Col>
-                    //     </Row>
-                    //   )
-                    // }
-                      // if (allPostsIndex % 2){
-                      //   return(
-                      //     <>
-                      //       <Col classes="col-lg-2"></Col>
-                      //       <Col classes='col-lg-4'>   
-                      //         <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
-                      //       </Col> 
-                      //     </>
-                      //   )
-                      // } else {
-                        // return(
-                        //   <>
-                        //     <Col classes='col-lg-4'>   
-                        //       <PostBox id={id} title={title} uri={uri} date={date} categories={categories}></PostBox>
-                        //     </Col>
-                        //     <Col classes="col-lg-2"></Col>
-                        //   </>
-                        // )
                   }
                 }
               })

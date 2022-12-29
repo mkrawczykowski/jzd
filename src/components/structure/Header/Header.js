@@ -8,8 +8,6 @@ import * as styles from './Header.module.scss'
 const Header = () => {
     const [headerStateClass, setHeaderStateClass] = useState('');
     const changingHeaderStateClass = () => {
-        console.log('changing state!');
-        console.log(headerStateClass);
         headerStateClass.length > 0 ? setHeaderStateClass('') : setHeaderStateClass('active');
     }
 

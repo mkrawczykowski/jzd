@@ -7,8 +7,6 @@ import LinesEllipsis from 'react-lines-ellipsis'
 
 const PostBox = ({id, title, excerpt, uri, date, categories}) => {
   if (excerpt){
-    console.log('styles');
-    console.log(styles);
     return(
       <div className={styles.postBox}>
         <Row>
