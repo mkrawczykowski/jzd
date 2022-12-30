@@ -15,7 +15,7 @@ export const queryPost = graphql`
           nodes {
             id
             name
-            slug
+            uri
           }
         }
         ACFcontentSections{
@@ -41,7 +41,7 @@ const PostTemplate = ({data}) =>{
     <Layout>
       <Container>
         <h1>{post.title}</h1>
-        <PostCategories categories={categories} date={date}></PostCategories>
+        <PostCategories categories={categories} date={date} ></PostCategories>
       </Container>
       
       {
