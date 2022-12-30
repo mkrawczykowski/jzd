@@ -57,9 +57,7 @@ let twoPostsInRow = [];
                 const title = post.title;
                 const uri = post.uri;
                 const categories = post.categories.nodes;
-
-                const dateOptions = { year: 'numeric', month: '2-digit', day: 'numeric' };
-                const date = new Date(post.date).toLocaleDateString('pl-PL', dateOptions).replaceAll('-', '.');
+                const date = post.date;
                 
                 if (allPostsIndex + 1 > skip && allPostsIndex + 1 <= newestPostsNumber + skip){
 
