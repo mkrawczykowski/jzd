@@ -41,8 +41,6 @@ const PostTemplate = ({data}) =>{
     <Layout>
       <Container>
         <h1>{post.title}</h1>
-        {categories}
-        {date}
         <PostCategories categories={categories} date={date}></PostCategories>
       </Container>
       
