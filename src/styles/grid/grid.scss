@@ -14,12 +14,14 @@ $colWidth:  (round(math.div(variables.$container-width, 12) * 10) / 10) * 1rem;
     margin-right: calc(variables.$gap / 2 * -1);
     justify-content: flex-start;
     align-items: flex-start;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 
     .col{
       padding-right: 1rem;
       padding-left: 1rem;
-      flex-basis: 100%;
+      // flex-basis: 100%;
+      // flex-grow: 0;
+      // max-width: 100%;
     }
 
     @each $breakpointName, $breakpointValue in variables.$breakpoints {
@@ -29,7 +31,7 @@ $colWidth:  (round(math.div(variables.$container-width, 12) * 10) / 10) * 1rem;
       @media screen and (min-width:#{$breakpointValuePx}){
         @for $i from 1 through 12{
           .col-#{$breakpointName}-#{$i} {
-            flex-basis: calc(#{$colWidth} * #{$i});
+            width: calc(#{$colWidth} * #{$i});
           }
         }
       }
