@@ -18,8 +18,8 @@ $colWidth:  math.div(100%, 12);
     flex-wrap: wrap;
 
     .col{
-      padding-right: 1rem;
-      padding-left: 1rem;
+      padding-right: calc(variables.$gap / 2);
+      padding-left: calc(variables.$gap / 2);
       // flex-basis: 100%;
       // flex-grow: 0;
       // max-width: 100%;
@@ -33,6 +33,12 @@ $colWidth:  math.div(100%, 12);
         @for $i from 1 through 12{
           .col-#{$breakpointName}-#{$i} {
             width: calc(#{$colWidth} * #{$i});
+            $parentWidth: $colWidth * $i;
+
+            .col-lg-2{
+              $test: math.div(12,$i);
+              width: calc(#{$parentWidth}*#{$test});
+            }
           }
         }
       }

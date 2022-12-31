@@ -9,17 +9,39 @@ const PostBox = ({id, title, excerpt, uri, date, categories}) => {
   if (excerpt){
     return(
       <div className={styles.postBox}>
+
         <Row>
+          <Col classes="col-lg-4">
+            <Row>
+              <Col classes="col-lg-2">
+                sss
+              </Col>
+              <Col classes="col-lg-2">
+                sss
+              </Col>  
+            </Row>
+          </Col>
+        </Row>
+
+        {/* poniżesze działa dobrze, ale dla testów siatki postanowiłem na razie zakomentować */}
+        {/* poniżesze działa dobrze, ale dla testów siatki postanowiłem na razie zakomentować */}
+        {/* poniżesze działa dobrze, ale dla testów siatki postanowiłem na razie zakomentować */}
+        {/* poniżesze działa dobrze, ale dla testów siatki postanowiłem na razie zakomentować */}
+        {/* poniżesze działa dobrze, ale dla testów siatki postanowiłem na razie zakomentować */}
+        {/* poniżesze działa dobrze, ale dla testów siatki postanowiłem na razie zakomentować */}
+        {/* poniżesze działa dobrze, ale dla testów siatki postanowiłem na razie zakomentować */}
+        {/* poniżesze działa dobrze, ale dla testów siatki postanowiłem na razie zakomentować */}
+        {/* <Row>
           <Col classes="col-lg-4">
             {title && uri ? <a href={uri} className={[styles.postBox__title, styles.postBox__titleOption1].join(' ')}><LinesEllipsis text={title} maxLine='3' ellipsis='...' trimRight basedOn='letters' component='h3'></LinesEllipsis></a> : null}
             <PostCategories categories={categories} date={date}></PostCategories>
           </Col>
-          <Col classes="col-lg-1"></Col>
+          <Col classes="col-lg-1">d</Col>
           <Col classes="col-lg-3">
             <p className={styles.postBox__excerpt}>{excerpt}</p>
             <RoundedButton href={uri} halign="right"></RoundedButton>         
           </Col>
-        </Row>
+        </Row> */}
       </div>
     )    
   } else {
