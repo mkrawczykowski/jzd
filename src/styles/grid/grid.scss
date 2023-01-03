@@ -40,8 +40,9 @@ $colWidth:  math.div(100%, 12);
                 $fullToParentRatio: math.div(12,$i);
                 $parentToChildRatio: math.div(12,$i);
                 // width: calc(#{$parentWidth} * #{$fullToParentRatio});
-                
-                width: calc(#{$parentWidth} * #{$fullToParentRatio} );
+                // width: calc(#{$parentWidth} * #{$fullToParentRatio} );
+                // width: math.div(1, $i) * $childIndex * $colWidth;
+                width: math.div(100%, $parentWidth) * $childIndex * $colWidth;
               }
             }
 

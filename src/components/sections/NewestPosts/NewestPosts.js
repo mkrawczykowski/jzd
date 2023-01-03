@@ -69,24 +69,20 @@ let twoPostsInRow = [];
                     return(
                       <>
                         <Row>
-                          <Col classes="col-lg-5">
+                          <Col classes="col-lg-6">
                             <Row>
-                              <Col classes="col-lg-4">ss</Col>
-                              <Col classes="col-lg-4">dd</Col>  
+                              <Col classes="col-lg-2">ss</Col>
+                              <Col classes="col-lg-2">dd</Col>  
                             </Row>
                           </Col>
                         </Row>
+
                         <Row>
                           <Col classes="col-lg-2"></Col>
-                          <Col classes="col-lg-6">
-                            <Row>
-                              <Col classes="col-lg-6">
-                                sss
-                              </Col>
-                              <Col classes="col-lg-6">
-                                sss
-                              </Col>    
-                            </Row>
+                          <Col classes="col-lg-1">
+                            
+                                
+                            
                             {/* <PostBox key={id} id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox> */}
                           </Col>
                           <Col classes="col-lg-2"></Col>
