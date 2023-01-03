@@ -16,7 +16,7 @@ const HPSlider = ({acfOptions}) => {
         <Row>
           <Col classes="col-xs-12 col-lg-1"></Col>
           <Col classes="col-xs-12 col-lg-10">
-            <Swiper navigation={true} modules={[Navigation]} className={styles.hpSlider__swiper}>
+            <Swiper navigation={{nextEl: styles.hpSlider__navButton1, prevEl: styles.hpSlider__navButton2}} className={styles.swiperButtonPrev}>
               {
                 HPSlides.map(HPSlide => {
                   const slideCategories = HPSlide.slide.categories.nodes;
@@ -41,9 +41,11 @@ const HPSlider = ({acfOptions}) => {
                   )
                 })
               }
+              <div className={styles.hpSlider__navButton1}>test</div>
+              <div className={styles.hpSlider__navButton2}>test</div>
             </Swiper>
           </Col>
-          <Col classes="ccol-xs-12 col-lg-1"></Col>
+          <Col classes="col-xs-12 col-lg-1"></Col>
         </Row>
       </Container>
     </section>

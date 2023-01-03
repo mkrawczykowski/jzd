@@ -14,7 +14,18 @@
         background: linear-gradient(90deg, rgba(255,0,199,0.2) 0%, rgba(173,0,255,0.2) 100%);
     }
 
-    &__swiper{
+    &__nav-button1{
+        width: 20px;
+        height: 20px;
+        background-color: aqua;
+    }
+    &__nav-button2{
+        width: 20px;
+        height: 20px;
+        background-color: aqua;
+    }
+
+    .swiper{
 border: 2px solid red;
 
         .swiper-button{
