@@ -12,14 +12,14 @@ const PostBox = ({id, title, excerpt, uri, date, categories}) => {
 
         <Row>
           <Col classes="col-lg-4">
-            <Row>
+            {/* <Row>
               <Col classes="col-lg-2">
                 sss
               </Col>
               <Col classes="col-lg-2">
                 sss
               </Col>  
-            </Row>
+            </Row> */}
           </Col>
         </Row>
 

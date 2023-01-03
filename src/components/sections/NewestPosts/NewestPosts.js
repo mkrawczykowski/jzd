@@ -67,13 +67,29 @@ let twoPostsInRow = [];
                     excerpt = post.ACFpostExcerpt.postExcerpt;
                     
                     return(
-                      <Row>
-                        <Col classes="col-lg-2"></Col>
-                        <Col classes="col-lg-8">
-                          <PostBox key={id} id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox>
-                        </Col>
-                        <Col classes="col-lg-2"></Col>
-                      </Row>
+                      <>
+                        <Row>
+                          <Col classes="col-lg-3">
+                            <Col classes="col-lg-2">ss</Col>
+                            <Col classes="col-lg-2">dd</Col>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col classes="col-lg-2"></Col>
+                          <Col classes="col-lg-6">
+                            <Row>
+                              <Col classes="col-lg-6">
+                                sss
+                              </Col>
+                              <Col classes="col-lg-6">
+                                sss
+                              </Col>    
+                            </Row>
+                            {/* <PostBox key={id} id={id} title={title} excerpt={excerpt} uri={uri} date={date} categories={categories}></PostBox> */}
+                          </Col>
+                          <Col classes="col-lg-2"></Col>
+                        </Row>
+                      </>
                     )
                   }
                   

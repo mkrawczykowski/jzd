@@ -35,10 +35,20 @@ $colWidth:  math.div(100%, 12);
             width: calc(#{$colWidth} * #{$i});
             $parentWidth: $colWidth * $i;
 
-            .col-lg-2{
-              $test: math.div(12,$i);
-              width: calc(#{$parentWidth}*#{$test});
+            @for $childIndex from 1 through 12{
+              .col-#{$breakpointName}-#{$childIndex} {
+                $fullToParentRatio: math.div(12,$i);
+                // $parentToChildRatio: math.div(12,$i);
+                width: calc(#{$parentWidth} * #{$fullToParentRatio});
+              }
             }
+
+
+
+            // .col-lg-6{
+            //   $test: math.div(12,6);
+            //   width: calc(math.div(#{$parentWidth}, #{$test}));
+            // }
           }
         }
       }
