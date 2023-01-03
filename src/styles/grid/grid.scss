@@ -1,25 +1,28 @@
 @use '../global/variables';
 @use 'sass:math';
 
-// $colWidth:  (round(math.div(variables.$container-width, 12) * 10) / 10) * 1rem;
+// Grid settings
 $colWidth:  math.div(100%, 12);
+$containerHorizontalPadding: 2; //rem units
+$container-width: 136; //rem units
+$gap: 2rem;
 
 .container{
-  max-width: calc((variables.$container-width + variables.$containerHorizontalPadding * 2) * 1rem);
-  padding: 0 calc(variables.$containerHorizontalPadding) * 1rem;
+  max-width: calc(($container-width * 1rem) + $gap);
+  padding: 0 calc($containerHorizontalPadding / 2) * 1rem;
   margin: 0 auto;
 
   .row{
     display: flex;
-    margin-left: calc(variables.$gap / 2 * -1);
-    margin-right: calc(variables.$gap / 2 * -1);
+    margin-left: calc($gap / 2 * -1);
+    margin-right: calc($gap / 2 * -1);
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
 
     .col{
-      padding-right: calc(variables.$gap / 2);
-      padding-left: calc(variables.$gap / 2);
+      padding-right: calc($gap / 2);
+      padding-left: calc($gap / 2);
       // flex-basis: 100%;
       // flex-grow: 0;
       // max-width: 100%;
