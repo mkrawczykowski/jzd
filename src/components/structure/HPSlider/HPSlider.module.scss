@@ -13,4 +13,17 @@
         display: inline-block;
         background: linear-gradient(90deg, rgba(255,0,199,0.2) 0%, rgba(173,0,255,0.2) 100%);
     }
+
+    &__swiper{
+border: 2px solid red;
+
+        .swiper-button{
+            &-prev{
+                left: 111px;
+            }
+            &-next{
+                right: 115px;
+            }
+        }        
+    }
 }

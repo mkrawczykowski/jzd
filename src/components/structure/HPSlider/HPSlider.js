@@ -1,20 +1,22 @@
 import React from 'react';
 import {Container, Row, Col} from '../../structure/Grid/Grid';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import {Navigation} from 'swiper';
 import * as styles from './HPSlider.module.scss';
 
 import 'swiper/css';
+import "swiper/css/navigation";
 
 const HPSlider = ({acfOptions}) => {
 
   const HPSlides = acfOptions.slides;
   return(
-    <div className={styles.hpSlider}>
+    <section className={styles.hpSlider}>
       <Container>
         <Row>
           <Col classes="col-xs-12 col-lg-1"></Col>
           <Col classes="col-xs-12 col-lg-10">
-            <Swiper>
+            <Swiper navigation={true} modules={[Navigation]} className={styles.hpSlider__swiper}>
               {
                 HPSlides.map(HPSlide => {
                   const slideCategories = HPSlide.slide.categories.nodes;
@@ -44,7 +46,7 @@ const HPSlider = ({acfOptions}) => {
           <Col classes="ccol-xs-12 col-lg-1"></Col>
         </Row>
       </Container>
-    </div>
+    </section>
   )
 }
 
