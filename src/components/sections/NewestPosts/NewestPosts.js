@@ -69,9 +69,11 @@ let twoPostsInRow = [];
                     return(
                       <>
                         <Row>
-                          <Col classes="col-lg-3">
-                            <Col classes="col-lg-2">ss</Col>
-                            <Col classes="col-lg-2">dd</Col>
+                          <Col classes="col-lg-5">
+                            <Row>
+                              <Col classes="col-lg-4">ss</Col>
+                              <Col classes="col-lg-4">dd</Col>  
+                            </Row>
                           </Col>
                         </Row>
                         <Row>

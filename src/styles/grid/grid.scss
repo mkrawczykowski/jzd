@@ -38,8 +38,10 @@ $colWidth:  math.div(100%, 12);
             @for $childIndex from 1 through 12{
               .col-#{$breakpointName}-#{$childIndex} {
                 $fullToParentRatio: math.div(12,$i);
-                // $parentToChildRatio: math.div(12,$i);
-                width: calc(#{$parentWidth} * #{$fullToParentRatio});
+                $parentToChildRatio: math.div(12,$i);
+                // width: calc(#{$parentWidth} * #{$fullToParentRatio});
+                
+                width: calc(#{$parentWidth} * #{$fullToParentRatio} );
               }
             }
 
