@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {Container, Row, Col} from '../../structure/Grid/Grid';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Navigation} from 'swiper';
@@ -10,13 +10,19 @@ import "swiper/css/navigation";
 const HPSlider = ({acfOptions}) => {
 
   const HPSlides = acfOptions.slides;
+  const swiperRef = useRef();
   return(
-    <section className={styles.hpSlider}>
+  <>
+    {/* based on https://stackoverflow.com/questions/70324190/custom-arrow-swiper-slider-next-js-sass */}
+    <section className={styles.hpSlider}>    <button onClick={() => {swiperRef.current?.slidePrev(); console.log('klik')}}><h1>back</h1></button>
+
       <Container>
         <Row>
           <Col classes="col-xs-12 col-lg-1"></Col>
           <Col classes="col-xs-12 col-lg-10">
-            <Swiper navigation={{nextEl: styles.hpSlider__navButton1, prevEl: styles.hpSlider__navButton2}} className={styles.swiperButtonPrev}>
+
+            
+            <Swiper className={styles.swiperButtonPrev} onBeforeInit={(swiper) => {swiperRef.current = swiper; console.log(swiperRef.current.slidePrev);}}>
               {
                 HPSlides.map(HPSlide => {
                   const slideCategories = HPSlide.slide.categories.nodes;
@@ -41,14 +47,14 @@ const HPSlider = ({acfOptions}) => {
                   )
                 })
               }
-              <div className={styles.hpSlider__navButton1}>test</div>
-              <div className={styles.hpSlider__navButton2}>test</div>
             </Swiper>
+            <button onClick={() => {swiperRef.current.slideNext()}}>next</button>
           </Col>
           <Col classes="col-xs-12 col-lg-1"></Col>
         </Row>
       </Container>
     </section>
+    </>
   )
 }
 
