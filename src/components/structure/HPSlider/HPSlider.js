@@ -10,19 +10,33 @@ import "swiper/css/navigation";
 const HPSlider = ({acfOptions}) => {
 
   const HPSlides = acfOptions.slides;
-  const swiperRef = useRef();
-  return(
-  <>
-    {/* based on https://stackoverflow.com/questions/70324190/custom-arrow-swiper-slider-next-js-sass */}
-    <section className={styles.hpSlider}>    <button onClick={() => {swiperRef.current?.slidePrev(); console.log('klik')}}><h1>back</h1></button>
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
 
+  return(
+  <><div ref={navigationPrevRef}>sssssssssssssssssssssss</div>
+      <div ref={navigationNextRef}>sssssssssssssssssssssss</div>
+    {/* based on https://stackoverflow.com/questions/70324190/custom-arrow-swiper-slider-next-js-sass */}
+    <section className={styles.hpSlider}>
+    
       <Container>
         <Row>
           <Col classes="col-xs-12 col-lg-1"></Col>
           <Col classes="col-xs-12 col-lg-10">
-
+          
             
-            <Swiper className={styles.swiperButtonPrev} onBeforeInit={(swiper) => {swiperRef.current = swiper; console.log(swiperRef.current.slidePrev);}}>
+            {/* <Swiper className={styles.swiperButtonPrev} onBeforeInit={(swiper) => {swiperRef.current = swiper; console.log(swiperRef.current.slidePrev);}}> */}
+            <Swiper 
+              className={styles.swiperButtonPrev}
+              navigation={{
+                prevEl: navigationPrevRef.current,
+                nextEl: navigationNextRef.current,
+              }}
+              onBeforeInit={(swiper) => {
+                swiper.params.navigation.prevEl = navigationPrevRef.current;
+                swiper.params.navigation.nextEl = navigationNextRef.current;
+              }}
+            >
               {
                 HPSlides.map(HPSlide => {
                   const slideCategories = HPSlide.slide.categories.nodes;
@@ -48,7 +62,6 @@ const HPSlider = ({acfOptions}) => {
                 })
               }
             </Swiper>
-            <button onClick={() => {swiperRef.current.slideNext()}}>next</button>
           </Col>
           <Col classes="col-xs-12 col-lg-1"></Col>
         </Row>
