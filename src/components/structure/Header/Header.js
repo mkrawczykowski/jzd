@@ -12,7 +12,7 @@ const Header = () => {
     }
 
     return(
-        <header className={styles.header}>
+        <head className={styles.header}>
             <Container>
                 <Row>
                     <Col classes="col col-xs-12 col-lg-1"></Col>
@@ -26,7 +26,7 @@ const Header = () => {
                     <Col classes="col col-xs-12 col-lg-1"></Col>
                 </Row>
                 </Container>
-        </header>
+        </head>
     )
 }
 
