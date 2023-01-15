@@ -25,7 +25,7 @@ const Header = () => {
                     </Col>
                     <Col classes="col col-xs-12 col-lg-1"></Col>
                 </Row>
-                </Container>
+            </Container>
         </head>
     )
 }
